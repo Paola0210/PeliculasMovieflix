@@ -54,12 +54,27 @@
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-main">
 			<ul class="nav navbar-nav">
-				
-				
-				<!-- TV CANALES  WISE-->
+				<!-- MOVIES GENRE WISE-->
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="" style="color: #e50914; font-weight: bold;">
-						Canales <span class="caret"></span>
+						Peliculas <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="themes">
+						<?php
+							$genres		=	$this->crud_model->get_genres();
+							foreach ($genres as $row):
+							?>
+						<li><a href="<?php echo base_url();?>index.php?browse/movie/<?php echo $row['genre_id'];?>">
+							<?php echo $row['name'];?>
+							</a>
+						</li>
+						<?php endforeach;?>
+					</ul>
+				</li>
+				<!-- TV SERIES GENRE WISE-->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="" style="color: #e50914; font-weight: bold;">
+						Series <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="themes">
 						<?php
@@ -73,8 +88,10 @@
 						<?php endforeach;?>
 					</ul>
 				</li>
-				
-				
+				<!-- MY LIST -->
+				<li>
+					<a href="<?php echo base_url();?>index.php?browse/mylist">Mi Lista</a>
+				</li>
 			</ul>
 			<!-- PROFILE, ACCOUNT SECTION -->
 			<?php

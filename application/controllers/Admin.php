@@ -262,7 +262,7 @@ class Admin extends CI_Controller {
 	function series_list()
 	{
 		$page_data['page_name']		=	'series_list';
-		$page_data['page_title']	=	'Manage Tv Series';
+		$page_data['page_title']	=	'Lista de Canales';
 		$this->load->view('backend/index', $page_data);
 	}
 
