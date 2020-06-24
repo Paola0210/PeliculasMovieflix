@@ -7,6 +7,7 @@
 	.btn_opaque:hover{border: 1px solid #939393;text-decoration: none;background-color: rgba(57, 57, 57, 0.74);color:#fff;}
 </style>
 <!-- TOP FEATURED SECTION -->
+<?php include 'playseries.php';?>
 <?php
 	$featured_movie		=	$this->db->get_where('movie', array('featured'=>1))->row();
 	
