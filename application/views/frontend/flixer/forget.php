@@ -8,7 +8,7 @@
 		</a>
 	</div>
     <div style="float: right;margin: 18px 40px; height: 50px;">
-        <a href="<?php echo base_url();?>index.php?home/signin" class="" style="color: #e50914;font-weight: 700;font-size: 20px;">Sign in</a>
+        <a href="<?php echo base_url();?>index.php?home/signin" class="" style="color: #e50914;font-weight: 700;font-size: 20px;">Registrarse</a>
     </div>
 	<form action="<?php echo base_url();?>index.php?home/forget" method="post">
 		<div class="row">
@@ -30,12 +30,12 @@
 						<!-- SUCCESS MESSAGE -->
 						<div class="alert alert-dismissible alert-success">
 						  <button type="button" class="close" data-dismiss="alert">&times;</button>
-						  Password enviado a su correo.
+						  Contraseña enviada a su correo.
 						  <a href="<?php echo base_url();?>index.php?home/signin">Entrar</a>
 						</div>
 					<?php endif;?>
 
-					<h3 class="black_text">Olvido E-mail/Password</h3>
+					<h3 class="black_text">Olvido E-mail/Contraseña</h3>
 					
 Ingrese a su dirección de correo electrónico. Te enviaremos una contraseña temporal..
 					<div class="black_text" style="margin-top: 20px;">

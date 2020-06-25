@@ -14,7 +14,7 @@
 		  echo $name;
 		?>
 	  </div>
-	  <div class="status">Admin</div>
+	  <div class="status">Administrador</div>
 	</div>
   </div>
   <hr style="border-top: 1px solid  rgba(229, 233, 236, 0.14); border-bottom: 0px;" />
@@ -25,55 +25,46 @@
 	<li class="<?php if ($page_name == 'dashboard')echo 'active';?>"> 
 		<a href="<?php echo base_url();?>index.php?admin/dashboard">
 		<i class="material-icons">home</i> 
-		<span class="title">Home</span> <span class=""></span> </a>
+		<span class="title">Inicio</span> <span class=""></span> </a>
 	</li>
 	
 	<!-- MOVIES -->
 	<li class="<?php if ($page_name == 'movie_list' || $page_name == 'movie_edit' || $page_name == 'movie_create')echo 'active';?>"> 
 		<a href="<?php echo base_url();?>index.php?admin/movie_list">
 		<i class="material-icons">video_library</i> 
-		<span class="title">Movies</span> <span class=""></span> </a>
+		<span class="title">Canales</span> <span class=""></span> </a>
 	</li>
 	
-	<!-- TV SERIES -->
-	<li class="<?php if ($page_name == 'series_list' || $page_name == 'series_create' 
-						 || $page_name == 'series_edit' || $page_name == 'season_edit')echo 'active';?>"> 
-		<a href="<?php echo base_url();?>index.php?admin/series_list"><i class="material-icons">ondemand_video</i> 
-		<span class="title">Tv Series</span> <span class=""></span> </a>
-	</li>
 	
-	<!--  -->
+	
+	<!--genero  -->
 	<li class="<?php if ($page_name == 'genre_list' || $page_name == 'genre_edit' || $page_name == 'genre_create')echo 'active';?>"> 
 		<a href="<?php echo base_url();?>index.php?admin/genre_list">
 		<i class="material-icons">filter_list</i> 
-		<span class="title">Genre</span> <span class=""></span> </a>
+		<span class="title">Genero</span> <span class=""></span> </a>
 	</li>
 	
-	<!--  -->
-	<li class="<?php if ($page_name == 'actor_list' || $page_name == 'actor_edit' || $page_name == 'actor_create')echo 'active';?>"> 
-		<a href="<?php echo base_url();?>index.php?admin/actor_list"><i class="material-icons">star_border</i> 
-		<span class="title">Actors</span> <span class=""></span> </a>
-	</li>
+
 	
 	<!--  -->
 	<li class="<?php if ($page_name == 'user_list')echo 'active';?>"> 
 		<a href="<?php echo base_url();?>index.php?admin/user_list"><i class="material-icons">people</i> 
-		<span class="title">Users</span> <span class=""></span> </a>
+		<span class="title">usuarios</span> <span class=""></span> </a>
 	</li>
 	
-	<!--  -->
+	<!--  membresia-->
 	<li class="<?php if ($page_name == 'plan_list' || $page_name == 'plan_edit')echo 'active';?>"> 
 		<a href="<?php echo base_url();?>index.php?admin/plan_list"><i class="material-icons">view_carousel</i> 
-		<span class="title">Membership Packages</span> <span class=""></span> </a>
+		<span class="title">Paquetes de membresía</span> <span class=""></span> </a>
 	</li>
 	
-	<!--  -->
+	<!-- reporte -->
 	<li class="<?php if ($page_name == 'report')echo 'active';?>"> 
 		<a href="<?php echo base_url();?>index.php?admin/report"><i class="material-icons">timeline</i> 
-		<span class="title">Report</span> <span class=""></span> </a>
+		<span class="title">Reporte</span> <span class=""></span> </a>
 	</li>
 	
-	<!--  -->
+	<!-- configuraciones -->
 	<?php 
 	  $open_settings = false;
 	  if ($page_name == 'faq_list' 		|| 
@@ -83,17 +74,19 @@
 	  ?>
 						 	
 	<li class="<?php if($open_settings == true)echo 'active';?>"> <a href="#"><i class="material-icons">build</i> 
-		<span class="title">Configuration</span> <span class="<?php if($open_settings == true)echo 'open';?> arrow"></span> </a>
+		<span class="title">Configurationes</span> <span class="<?php if($open_settings == true)echo 'open';?> arrow"></span> </a>
 		<ul class="sub-menu">
-			<li class=""><a href="<?php echo base_url();?>index.php?admin/settings">Website settings</a></li>
-			<li class=""><a href="<?php echo base_url();?>index.php?admin/faq_list">Customer's faq</a></li>
+			
+			<li class=""><a href="<?php echo base_url();?>index.php?admin/settings">
+                 Configuraciones del sitio web</a></li>
+			<li class=""><a href="<?php echo base_url();?>index.php?admin/faq_list">Preguntas frecuentes</a></li>
 		</ul>
 	</li>
 	
 	<!--  -->
 	<li class="<?php if($page_name == 'account')echo 'active';?>"> 
 		<a href="<?php echo base_url();?>index.php?admin/account"><i class="material-icons">account_circle</i> 
-		<span class="title">Account</span> <span class=""></span> </a>
+		<span class="title">Cuenta</span> <span class=""></span> </a>
 	</li>
 	
 	

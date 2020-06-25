@@ -17,7 +17,7 @@
 		</a>
 	</div>
 	<div style="clear: both; text-align: center; padding-top: 100px;">
-		<h1>Administrar Profiles</h1>
+		<h1>Administrar perfiles</h1>
 		<table align="center" style="background-color: #141414;">
 			<tr>
 				<td>
