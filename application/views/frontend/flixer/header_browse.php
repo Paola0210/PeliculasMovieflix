@@ -11,11 +11,11 @@
       <div class="modal-body">
 	  	
 		Tu Suscripcion esta proxima a ser vencida <br>
-		Te invitamos a suscribirte para seguir disfrutando de MOVIEFLIX ...<br>
+		Te invitamos a suscribirte para seguir disfrutando de TvDIGITAL ...<br>
 		<a id="dias_restantes" style="color:red">3 Dias de suscripcion</a><br>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
       </div>
     </div>

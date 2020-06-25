@@ -7,12 +7,11 @@
 	.btn_opaque:hover{border: 1px solid #939393;text-decoration: none;background-color: rgba(57, 57, 57, 0.74);color:#fff;}
 </style>
 <!-- TOP FEATURED SECTION -->
-<?php include 'playseries.php';?>
 <?php
 	$featured_movie		=	$this->db->get_where('movie', array('featured'=>1))->row();
 	
 	?>
-<div style="height:105vh;width:100%;background-image: url(<?php echo $this->crud_model->get_poster_url('movie' , $featured_movie->movie_id);?>); background-size:cover;">
+<?php /*?><div style="height:105vh;width:100%;background-image: url(<?php echo $this->crud_model->get_poster_url('movie' , $featured_movie->movie_id);?>); background-size:cover;">
 	<div style="font-size: 400%;font-weight: bold;clear: both;padding: 140px 0px 0px 30px;color: #fff;">
 		<?php echo $featured_movie->title;?>
 		<div style="font-size: 20px; letter-spacing: .2px; color: #fff; font-weight: 400;">
@@ -38,7 +37,7 @@
 		</a>
 		</span>
 	</div>
-</div>
+</div><?php */?>
 <script>
 	// submit the add/delete request for mylist
 	// type = movie/series, task = add/delete, id = movie_id/series_id
@@ -85,7 +84,7 @@
 	<div class="content">
 		<div class="grid">
 			<?php 				
-				$movies	= $this->crud_model->get_movies($row['genre_id'] , 8, 0);
+				$movies	= $this->crud_model->get_movies($row['genre_id'] , 10, 0);
 				#print_r($movies);
 				$movierand	=	shuffle($movies);
 				#print_r($movierand);
