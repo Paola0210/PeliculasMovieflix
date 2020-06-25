@@ -23,24 +23,29 @@
 	position: relative;
 	float: left;
 	overflow: hidden;
-	margin: 0px 2px 80px;
-	/*min-width: 320px;*/
-	/*max-width: 300px;*/
-	width:300px;
-	max-height: 360px;
-	/*width: 48%;*/
-	background: #3085a3;
+	margin: 0px 6px 20px;
+	/* min-width: 320px; */
+	/* max-width: 300px; */
+	width: 19%;
+	/* width: 48%; */
+	height: 150px;
+	background: #fafbfb;
 	text-align: center;
 	cursor: pointer;
-	padding:0px;
+	border-radius: 20px;
+	padding: 30px;
+	padding-top: 30px;
+
 }
 
 .grid figure img {
-	position: relative;
-	/*display: block;*/
-	min-height: 100%;
-	max-width: 100%;
-	opacity: 0.8;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 70%;
+    /* max-width: 100%; */
+    opacity: 0.8;
 }
 
 .grid figure figcaption {
