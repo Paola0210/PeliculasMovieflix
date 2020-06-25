@@ -2,7 +2,7 @@
 <!-- MOVIE LIST, GENRE WISE LISTING -->
 <div class="row" style="margin:20px 60px;">
 	<h4 style="text-transform: capitalize;">
-		<?php echo $this->db->get_where('genre', array('genre_id' => $genre_id))->row()->name;?> Peliculas (<?php echo $total_result;?>)
+		<?php echo $this->db->get_where('genre', array('genre_id' => $genre_id))->row()->name;?> Canales (<?php echo $total_result;?>)
 	</h4>
 	<div class="content">
 		<div class="grid">

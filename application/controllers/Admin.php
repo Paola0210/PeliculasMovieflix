@@ -21,7 +21,7 @@ class Admin extends CI_Controller {
 	function dashboard()
 	{
 		$page_data['page_name']		=	'dashboard';
-		$page_data['page_title']	=	'Home - Summary';
+		$page_data['page_title']	=	'Resumen de inicio';
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -220,7 +220,7 @@ class Admin extends CI_Controller {
 	function movie_list()
 	{
 		$page_data['page_name']		=	'movie_list';
-		$page_data['page_title']	=	'Manage movie';
+		$page_data['page_title']	=	'Administrar películas';
 		$this->load->view('backend/index', $page_data);
 	}
 

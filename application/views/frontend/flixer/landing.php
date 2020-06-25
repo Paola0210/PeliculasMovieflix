@@ -54,7 +54,7 @@
 							<div class="col-md-7" style="padding-top: 50px;">
 								<h4>
 									
-Si decides que VesfliX no es para ti, no hay problema. <br>
+Si decides que TvDIGITAL no es para ti, no hay problema. <br>
 								</h4>
 								
 							</div>
@@ -69,7 +69,7 @@ Si decides que VesfliX no es para ti, no hay problema. <br>
 						<div class="row">
 							<div class="col-md-9">
 								<h4>
-									Mira videos en cualquier momento y en cualquier lugar. Desde cualquier dispositivo.
+									Mira tus canales en cualquier momento y en cualquier lugar. Desde cualquier dispositivo.
 								</h4>
 							</div>
 							<div class="col-md-3">

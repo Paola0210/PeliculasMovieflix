@@ -2,7 +2,7 @@
 <div style="height:93vh;width:100%;background-image: url(<?php echo base_url().'assets/frontend/'.$selected_theme;?>/images/login_bg.jpg)">
 	<!-- logo -->
 	<div style="float: left;">
-		<a href="<?php echo base_url();?>index.php?playseries.php">
+		<a href="<?php echo base_url();?>index.php?home">
 		<img src="<?php echo base_url();?>/assets/global/logo.png" style="margin: 18px 40px; height: 50px;" />
 		</a>
 	</div>

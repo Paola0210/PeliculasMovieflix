@@ -1,6 +1,6 @@
 <a href="<?php echo base_url();?>index.php?admin/movie_create/" class="btn btn-primary" style="margin-bottom: 20px;">
 <i class="fa fa-plus"></i>
-Create movie
+Crear Canales
 </a>
 <div class="row-fluid">
 	<div class="span12">
