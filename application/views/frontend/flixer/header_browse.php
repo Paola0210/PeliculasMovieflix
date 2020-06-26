@@ -182,7 +182,9 @@
 				<button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 		</div>
-		<a style="color: red;" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk">Descarga Nuestra App <img style=" height: 15px;margin-right: 15px;" src="<?php echo base_url();?>/assets/global/icono1.png"> </a>
+	<!-- para descargar la app y la imagen -->
+		<a style="color: red;" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk">Descarga App ANDROID <img style=" height: 15px;margin-right: 15px;" src="<?php echo base_url();?>/assets/global/icono1.png"> </a>
+		
 	</div>
 </div>
 <?php 

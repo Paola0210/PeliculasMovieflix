@@ -4,12 +4,15 @@
 	<div style="float: left;">
 		<a href="<?php echo base_url();?>index.php?home">
 		<img src="<?php echo base_url();?>/assets/global/logo.png" style="margin: 18px 40px; height: 50px;" />
-		</a><a href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" style="color: red;">Descarga Nuestra App <img style=" height: 15px;margin-right: 15px;" src="<?php echo base_url();?>/assets/global/icono1.png"></a>
+		</a>
+		<!-- nombre de la app -->
+		<a href="<?php echo base_url();?> assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn  btn-lg" >UNIRME AHORA</a> 
+		
+		
+		<a href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" style="color: red;">Descarga App ANDROID <img style=" height: 50px;margin-right: 15px;" src="<?php echo base_url();?>/assets/global/icono1.png"></a>
 	</div>
 	
-	<div style="float: right;margin: 18px 40px; height: 50px;">
-		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" >Descarga nuestra APP</a>
-	</div>
+	
 	<div style="float: right;margin: 18px 40px; height: 50px;">
 		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" >INICIAR</a>
 	</div>
