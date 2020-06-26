@@ -16,7 +16,7 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>selecionar</th>
+							<th title="Seleccionar">SLC</th>
 							<th>User Email</th>
 							<th>Subscribed Package </th>
 							<th>Plan </th>

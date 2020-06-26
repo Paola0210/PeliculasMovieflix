@@ -46,6 +46,7 @@
 			<a href="<?php echo base_url();?>index.php?browse/home" class="navbar-brand">
 				<img src="<?php echo base_url();?>/assets/global/logo.png" style=" height: 32px;margin-right: 50px;" />
 			</a>
+			
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -171,6 +172,7 @@
 					</ul>
 				</li>
 			</ul>
+			
 			<!-- SEARCH FORM -->
 			<form class="navbar-form navbar-right" method="post" action="<?php echo base_url();?>index.php?browse/search">
 				<div class="form-group">
@@ -180,6 +182,7 @@
 				<button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 		</div>
+		<a style="color: red;" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk">Descarga Nuestra App <img style=" height: 15px;margin-right: 15px;" src="<?php echo base_url();?>/assets/global/icono1.png"> </a>
 	</div>
 </div>
 <?php 
