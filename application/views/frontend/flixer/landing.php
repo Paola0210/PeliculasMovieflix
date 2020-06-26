@@ -7,6 +7,9 @@
 		</a>
 	</div>
 	<div style="float: right;margin: 18px 40px; height: 50px;">
+		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" >Descarga nuestra APP</a>
+	</div>
+	<div style="float: right;margin: 18px 40px; height: 50px;">
 		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" >INICIAR</a>
 	</div>
 	<div style="font-size: 75px;font-weight: bold;clear: both;padding: 100px 0px 0px 20px;color: #fff;">
