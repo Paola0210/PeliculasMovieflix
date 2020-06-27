@@ -79,7 +79,7 @@
 	$genres		=	$this->crud_model->get_genres();
 		foreach ($genres as $row):
 	?>
-<div class="row" style="margin:100px 60px;">
+<div class="row" style="margin:20px 60px;">
 	<h4><?php echo $row['name'];?></h4>
 	<div class="content">
 		<div class="grid">
