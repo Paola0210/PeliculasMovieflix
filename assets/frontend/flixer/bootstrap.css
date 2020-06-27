@@ -3350,6 +3350,15 @@ fieldset[disabled] .btn-warning.focus {
   background-color: #e50914;
   border-color: #e50914;
 }
+
+
+.btn-danger2 {
+  color: #ffffff;
+  background-color: #009600;
+  border-color: #e50914;
+}
+
+
 .btn-danger:focus,
 .btn-danger.focus {
   color: #ffffff;
@@ -3443,6 +3452,15 @@ fieldset[disabled] .btn-link:focus {
   border-radius: 3px;
   letter-spacing: 1.9px;
 }
+.btn-sm2,
+.btn-group-sm > .btn {
+  padding: 1px 4px;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 5px 10px;
