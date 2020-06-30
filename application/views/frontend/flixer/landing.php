@@ -5,7 +5,13 @@
 		<a href="<?php echo base_url();?>index.php?home">
 		<img src="<?php echo base_url();?>/assets/global/logo.png" style="margin: 18px 40px; height: 50px;" />
 		</a>
+		<!-- nombre de la app -->
+		
+		
+	<div style="border-color: #4000FF;margin-left: 40px;">	<a target="_blank" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn2 btn-danger2 btn-sm2" style="color: fff; "> <img style="height:35px; margin-right:10px; padding-left:4px; padding-bottom:3px;" src="<?php echo base_url();?>/assets/global/icono1.png"><strong>Descarga App</strong></a></div>
 	</div>
+	
+	
 	<div style="float: right;margin: 18px 40px; height: 50px;">
 		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" >INICIAR</a>
 	</div>
@@ -16,6 +22,7 @@
 		</div>
 		<a href="<?php echo base_url();?>index.php?home/signup" class="btn btn-danger btn-lg" >UNIRME AHORA</a>
 	</div>
+	
 </div><br><br>
 <!-- MIDDLE TAB SECTION -->
 <div class="container">

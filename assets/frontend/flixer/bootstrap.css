@@ -3025,6 +3025,28 @@ select[multiple].input-lg {
   -ms-user-select: none;
   user-select: none;
 }
+.btn2 {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 0px solid transparent;
+  white-space: nowrap;
+  padding: 7px 17px;
+  font-size: 16px;
+  line-height: normal;
+  /*border-radius: 3px;*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -3350,6 +3372,15 @@ fieldset[disabled] .btn-warning.focus {
   background-color: #e50914;
   border-color: #e50914;
 }
+
+
+.btn-danger2 {
+  color: #ffffff;
+  background-color: #009600;
+  border-color: #e50914;
+}
+
+
 .btn-danger:focus,
 .btn-danger.focus {
   color: #ffffff;
@@ -3443,6 +3474,16 @@ fieldset[disabled] .btn-link:focus {
   border-radius: 3px;
   letter-spacing: 1.9px;
 }
+.btn-sm2,
+.btn-group-sm > .btn {
+  padding: 3px 4px ;
+  padding-right: 7px;	
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 5px 10px;

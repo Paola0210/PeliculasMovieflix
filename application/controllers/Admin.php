@@ -43,7 +43,7 @@ class Admin extends CI_Controller {
 			redirect(base_url().'index.php?admin/genre_list' , 'refresh');
 		}
 		$page_data['page_name']		=	'genre_create';
-		$page_data['page_title']	=	'Create Genre';
+		$page_data['page_title']	=	'Crear Genero';
 		$this->load->view('backend/index', $page_data);
 	}
 	
@@ -60,7 +60,7 @@ class Admin extends CI_Controller {
 		}
 		$page_data['genre_id']		=	$genre_id;
 		$page_data['page_name']		=	'genre_edit';
-		$page_data['page_title']	=	'Edit Genre';
+		$page_data['page_title']	=	'editar genero';
 		$this->load->view('backend/index', $page_data);
 	}
 	
@@ -86,10 +86,11 @@ class Admin extends CI_Controller {
 					
 }				
 	// WATCH LIST OF USERS, MANAGE THEM
+	//sacar pdf
 	function sacar_pdfs()
 	{
 		$page_data['page_name']		=	'user_list';
-		$page_data['page_title']	=	'Manage user';
+		$page_data['page_title']	=	'Administrar Usuarios';
 		$this->load->view('backend/pages/sacar_pdf');
 	}
 	function exportar_activos_en_csv(){
@@ -220,7 +221,7 @@ class Admin extends CI_Controller {
 	function movie_list()
 	{
 		$page_data['page_name']		=	'movie_list';
-		$page_data['page_title']	=	'Administrar películas';
+		$page_data['page_title']	=	'Administrar Canales';
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -233,7 +234,7 @@ class Admin extends CI_Controller {
 			redirect(base_url().'index.php?admin/movie_list' , 'refresh');	
 		}
 		$page_data['page_name']		=	'movie_create';
-		$page_data['page_title']	=	'Create movie';
+		$page_data['page_title']	=	'Crear Canales';
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -247,7 +248,7 @@ class Admin extends CI_Controller {
 		}
 		$page_data['movie_id']		=	$movie_id;
 		$page_data['page_name']		=	'movie_edit';
-		$page_data['page_title']	=	'Edit movie';
+		$page_data['page_title']	=	'Editar Canales';
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -447,7 +448,7 @@ class Admin extends CI_Controller {
 	function user_list()
 	{
 		$page_data['page_name']		=	'user_list';
-		$page_data['page_title']	=	'Manage user';
+		$page_data['page_title']	=	'Administrar Usuarios';
 		$this->load->view('backend/index', $page_data);
 	}
 	

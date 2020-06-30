@@ -12,7 +12,7 @@
 			<!-- BEGIN LOGO -->
 			<a href="index.html">
 			<img src="<?php echo base_url();?>assets/global/logo.png" class="logo" alt="" data-src="<?php echo base_url();?>assets/global/logo.png" data-src-retina="<?php echo base_url();?>assets/global/logo.png" width="106" height="21" />
-			</a>
+			</a>			
 			<!-- END LOGO -->
 		</div>
 		<!-- END RESPONSIVE MENU TOGGLER -->
