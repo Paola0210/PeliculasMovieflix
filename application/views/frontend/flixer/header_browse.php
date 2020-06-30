@@ -183,7 +183,7 @@
 			</form>
 		</div>
 	<!-- para descargar la app y la imagen -->
-	<a target="_blank" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn2 btn-danger2 btn-sm2" style="color: fff; "> <img style=" height: 50px;margin-right: 15px;" src="<?php echo base_url();?>/assets/global/icono1.png"><strong>Descarga App </strong></a>
+	<a target="_blank" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn2 btn-danger2 btn-sm2" style="color: fff; "> <img style="height:35px; margin-right:10px; padding-left:4px; padding-bottom:3px;" src="<?php echo base_url();?>/assets/global/icono1.png"><strong>Descarga App </strong></a>
 		
 	</div>
 </div>
