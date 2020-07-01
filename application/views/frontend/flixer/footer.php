@@ -8,10 +8,9 @@
 			</ul>
 			<p><a href="https://www.facebook.com/MikrotikColombia/" rel="nofollow"> TvDIGITAL </a>. <br>
 			<a href="mailto:canal6yopal@gmail">tvdigital305@gmail.com</a>.</p>
-				<li><a href="<?php echo base_url();?>index.php?general/privacypolicy">Política de privacidad</a></li>
-				<li><a href="<?php echo base_url();?>index.php?general/refundpolicy">Politica de reembolso</a></li>
+				
 			</ul>
-			<p><a href="https://www.facebook.com/MikrotikColombia/" rel="nofollow"> Colombia -TvDIGITAL</a>. <a href="mailto:canal6yopal@gmail">tvdigital305@gmail.com</a>.</p>
+			
 		</div>
 	</div>
 </footer>
