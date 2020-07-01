@@ -1,20 +1,17 @@
 <!-- TOP LANDING SECTION -->
-<div style="height:93vh;width:100%;background-image: url(<?php echo base_url().'assets/frontend/flixer/images/home_top_banner.jpg';?>)">
+<div style="height:50%;width:100%;background-image: url(<?php echo base_url().'assets/frontend/flixer/images/home_top_banner.jpg';?>)">
 	<!-- logo -->
-	<div style="float: left;">
-					
+	<div style="float: none;">
 		<a href="<?php echo base_url();?>index.php?home">
-		<img src="<?php echo base_url();?>/assets/global/logo.png" style="margin: 18px 40px; height: 50px;"
-	   	 
+		<img src="<?php echo base_url();?>/assets/global/logo.png" style="margin: 18px 40px; height: 50px;" />
 		</a>
-	<!-- nombre de la app -->
-	<div style="border-color: #4000FF;margin-left: 40px;">	<a target="_blank" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn2 btn-danger2 btn-sm2" style="color: fff; "> <img style="height:35px; margin-right:10px; padding-left:4px; padding-bottom:3px;" src="<?php echo base_url();?>/assets/global/icono1.png"><strong>Descarga App</strong></a></div>
+		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" style="margin-left: 0;padding-top: 07px;margin-top: -20px;" >INGRESAR</a>
+		<a target="_blank" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn2 btn-danger2 btn-sm2" style="color: fff; "> <img style="height:25px; margin-right:10px; padding-left:4px; padding-bottom:3px;" src="<?php echo base_url();?>/assets/global/icono1.png"><strong>Descarga App</strong></a>
+		
+	<!-- nombre de la app -->		
+	<div style="border-color: #4000FF;">	</div>
 	</div>
-	
-	
-	<div style="float: right;margin: 18px 40px; height: 50px;">
-		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" >INICIAR</a>
-	</div>
+
 	<div style="font-size: 75px;font-weight: bold;clear: both;padding: 100px 0px 0px 20px;color: #fff;">
 		Quieres ver mas?
 		<div style="font-size: 25px; letter-spacing: .2px; color: #fff; font-weight: 100;">
