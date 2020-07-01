@@ -1,2 +1,6 @@
 
+<<<<<<< HEAD
 application/config/database.php
+=======
+*.php
+>>>>>>> d618d5a6876249182cd6f2d1dac6cf1ce22aa071
