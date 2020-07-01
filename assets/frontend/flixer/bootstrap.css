@@ -3476,11 +3476,13 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-sm2,
 .btn-group-sm > .btn {
-  padding: 3px 4px ;
-  padding-right: 7px;	
-  font-size: 12px;
-  line-height: 1;
-  border-radius: 10px;
+	padding: 3px 4px;
+	padding-right: 7px;
+	margin-top: -20px;
+	margin-left: 0;
+	font-size: 12px;
+	line-height: 1;
+	border-radius: 6px;	
 }
 
 
