@@ -1,12 +1,13 @@
 <a href="<?php echo base_url();?>index.php?admin/genre_create/" class="btn btn-primary" style="margin-bottom: 20px;">
 <i class="fa fa-plus"></i>
-Create genre
+
+Crear género
 </a>
 <div class="row-fluid">
 	<div class="span12">
 		<div class="grid simple ">
 			<div class="grid-title">
-				<h4>Genre List</h4>
+				<h4>Lista de géneros</h4>
 			</div>
 			<div class="grid-body ">
 				<table class="table table-hover table-condensed" id="example">
@@ -15,8 +16,8 @@ Create genre
 							<th>
 								#
 							</th>
-							<th>Genre Name</th>
-							<th>Operation</th>
+							<th>Nombre de género</th>
+							<th>Operación</th>
 						</tr>
 					</thead>
 					<tbody>

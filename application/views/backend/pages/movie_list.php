@@ -6,7 +6,7 @@ Crear Canales
 	<div class="span12">
 		<div class="grid simple ">
 			<div class="grid-title">
-				<h4>Movie List</h4>
+				<h4>Lista de Canales</h4>
 			</div>
 			<div class="grid-body ">
 				<table class="table table-hover table-condensed" id="example">
@@ -16,9 +16,9 @@ Crear Canales
 								#
 							</th>
 							<th></th>
-							<th>Movie Title</th>
-							<th>Genre</th>
-							<th>Operation</th>
+							<th>Título de Canales</th>
+							<th>Género</th>
+							<th>Operación</th>
 						</tr>
 					</thead>
 					<tbody>

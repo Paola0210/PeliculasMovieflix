@@ -161,8 +161,23 @@ $(document).ready(function() {
 	var tableElement = $('#example');
 
     tableElement.dataTable( {
+			"language": {
+        "decimal": "",
+        
+      
+   
+    },
+		"sLengthMenu": "_MENU_ ",
+		"sEmptyTable": "No hay información",
+                 
+        "sInfoPostFix": "",
+        "sThousands": ",",
+        "sLengthMenu": "Mostrar _MENU_ Entradas",
+        "sLoadingRecords": "Cargando...",
+        "sProcessing": "Procesando...",
+		
 		"sDom": "<'row'<'col-md-6'l T><'col-md-6'f>r>t<'row'<'col-md-12'p i>>",
-			"oTableTools": {
+		"oTableTools": {
 			"aButtons": [
 				{
 					"sExtends":    "collection",
@@ -177,8 +192,18 @@ $(document).ready(function() {
 		],
 		"aaSorting": [[ 0, "desc" ]],
 		"oLanguage": {
-			"sLengthMenu": "_MENU_ ",
-			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+		"sSearch": "Buscar:",
+	    "sZeroRecords": "Sin resultados encontrados",
+		"sInfoEmpty": "Mostrando 0 a 0 de 0 Entradas",	
+		"sInfoFiltered": "(Filtrado de _MAX_ total entradas)",	
+			
+        "oPaginate": {
+            "sFirst": "Primero",
+            "sLast": "Ultimo",
+            "sNext": "Siguiente",
+            "sPrevious": "Anterior"
+        },			
+			"sInfo": "Mostrando <b>_START_ a _END_</b> de	 _TOTAL_ resultados"
 		},
 		 bAutoWidth     : false,
         fnPreDrawCallback: function () {
@@ -192,7 +217,11 @@ $(document).ready(function() {
         },
         fnDrawCallback : function (oSettings) {
             responsiveHelper.respond();
+			
         }
+	
+		
+		
 	});
 	$('#example th').click(function(e) { 
 			$('#example .animate-progress-bar').each(function () {

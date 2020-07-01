@@ -1,12 +1,13 @@
 <a href="<?php echo base_url();?>index.php?admin/faq_create/" class="btn btn-primary" style="margin-bottom: 20px;">
 <i class="fa fa-plus"></i>
-Create faq
+
+Crear preguntas frecuentes
 </a>
 <div class="row-fluid">
 	<div class="span12">
 		<div class="grid simple ">
 			<div class="grid-title">
-				<h4>Movie List</h4>
+				<h4>Lista de Preguntas</h4>
 			</div>
 			<div class="grid-body ">
 				<table class="table table-hover table-condensed" id="example">
@@ -15,8 +16,8 @@ Create faq
 							<th>
 								#
 							</th>
-							<th>FAQ Question</th>
-							<th>Operation</th>
+							<th>Preguntas frecuentes</th>
+							<th>Operación</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -32,7 +33,7 @@ Create faq
 								<a href="<?php echo base_url();?>index.php?admin/faq_edit/<?php echo $row['faq_id'];?>" class="btn btn-info btn-xs btn-mini">
 								edit</a>
 								<a href="<?php echo base_url();?>index.php?admin/faq_delete/<?php echo $row['faq_id'];?>" class="btn btn-danger btn-xs btn-mini" onclick="return confirm('Want to delete?')">
-								delete</a>
+								Eliminar</a>
 							</td>
 						</tr>
 						<?php endforeach;?>

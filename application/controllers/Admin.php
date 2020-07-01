@@ -29,7 +29,7 @@ class Admin extends CI_Controller {
 	function genre_list()
 	{
 		$page_data['page_name']		=	'genre_list';
-		$page_data['page_title']	=	'Manage Genre';
+		$page_data['page_title']	=	'Administrar género';
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -423,7 +423,7 @@ class Admin extends CI_Controller {
 	function plan_list()
 	{
 		$page_data['page_name']		=	'plan_list';
-		$page_data['page_title']	=	'Manage plan';
+		$page_data['page_title']	=	'Administrar plan';
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -476,7 +476,7 @@ class Admin extends CI_Controller {
 		$page_data['month']			=	$month;
 		$page_data['year']			=	$year;
 		$page_data['page_name']		=	'report';
-		$page_data['page_title']	=	'Customer subscription & payment report';
+		$page_data['page_title']	=	'Suscripción del cliente e informe de pago';
 		$this->load->view('backend/index', $page_data);
 	}
 	
@@ -484,7 +484,7 @@ class Admin extends CI_Controller {
 	function faq_list()
 	{
 		$page_data['page_name']		=	'faq_list';
-		$page_data['page_title']	=	'Manage faq';
+		$page_data['page_title']	=	'Administrar preguntas frecuentes';
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -573,7 +573,7 @@ class Admin extends CI_Controller {
 		$page_data['refund_policy']			=	$this->db->get_where('settings',array('type'=>'refund_policy'))->row()->description;
 		
 		$page_data['page_name']				=	'settings';
-		$page_data['page_title']			=	'Website settings';
+		$page_data['page_title']			=	'Configuraciones del sitio web';
 		$this->load->view('backend/index', $page_data);
 	}
 	
@@ -608,7 +608,7 @@ class Admin extends CI_Controller {
 			}
 		}
 		$page_data['page_name']				=	'account';
-		$page_data['page_title']			=	'Manage account';
+		$page_data['page_title']			=	'Administrar cuenta';
 		$this->load->view('backend/index', $page_data);
 	}
 	

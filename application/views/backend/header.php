@@ -29,7 +29,7 @@
 				<ul class="nav quick-section">
 					<li class="quicklinks  m-r-10">
 						<a href="<?php echo base_url();?>index.php?browse/home" class="" ta>	
-						Visit frontend website <i class="fa fa-arrow-right" style="font-size: 15px;"></i>
+						Sitio Principal<i class="fa fa-arrow-right" style="font-size: 15px;"></i>
 						</a>
 					</li>
 				</ul>
@@ -44,11 +44,11 @@
 						</a>
 						<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
 							<li>
-								<a href="<?php echo base_url();?>index.php?admin/account"> My Account</a>
+								<a href="<?php echo base_url();?>index.php?admin/account">Mi cuenta</a>
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="<?php echo base_url();?>index.php?home/signout"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Log Out</a>
+								<a href="<?php echo base_url();?>index.php?home/signout"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Cerrar sesión</a>
 							</li>
 						</ul>
 					</li>

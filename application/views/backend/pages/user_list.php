@@ -17,8 +17,8 @@
 						<tr>
 							<th>#</th>
 							<th title="Seleccionar">SLC</th>
-							<th>User Email</th>
-							<th>Subscribed Package </th>
+							<th>Correo </th>
+							<th>Paquete </th>
 							<th>Plan </th>
 						</tr>
 					</thead>
@@ -110,4 +110,4 @@
 </script>
 <?php /* include 'APPPATH."models\Crud_model.php")'; 
 $crudxa =new Crud_model(); 
-$crudxa->validar_suscripciones(); */ ?>
+$crudxa->validar_suscripciones(); */ ?>	

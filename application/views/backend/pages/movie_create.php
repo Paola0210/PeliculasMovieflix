@@ -8,7 +8,7 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12 col-xs-12">
 							<div class="form-group">
-								<label class="form-label">Movie Title</label>
+								<label class="form-label">Titulo de Canal</label>
 								<span class="help"></span>
 								<div class="controls">
 									<input type="text" class="form-control" name="title">
@@ -16,42 +16,42 @@
 							</div>
 							<div class="form-group">
 								<label class="form-label">Video Url</label>
-								<span class="help">- youtube or any hosted video</span>
+						<span class="help">- youtube o cualquier video alojado</span>
 								<div class="controls">
 									<input type="text" class="form-control" name="url" id="url" onBlur="load_player()">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Thumbnail</label>
-								<span class="help">- icon image of the movie</span>
+								<label class="form-label">Caratula</label>
+							<span class="help">- imagen de icono del Canal</span>
 								<div class="controls">
 									<input type="file" class="form-control" name="thumb">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Poster</label>
-								<span class="help">- large banner image of the movie</span>
+								<label class="form-label">Portada</label>
+					<span class="help">-imagen de portada grande del canal</span>
 								<div class="controls">
 									<input type="file" class="form-control" name="poster">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Short description </label>
+								<label class="form-label">Breve descripción </label>
 								<span class="help"></span>
 								<div class="controls">
 									<textarea class="form-control" name="description_short"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Long description </label>
+								<label class="form-label">Descripción larga </label>
 								<span class="help"></span>
 								<div class="controls">
 									<textarea class="form-control" name="description_long"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Actors </label>
-								<span class="help">- select multiple actors</span>
+								<label class="form-label">Actores </label>
+								<span class="help">-</span>
 								<div class="controls">
 									<select class="select2"  multiple name="actors[]" style="width:100%;">
 										<?php 
@@ -65,8 +65,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Genre </label>
-								<span class="help">- genre must be selected</span>
+								<label class="form-label">Género</label>
+								<span class="help">-Seleccione el Género</span>
 								<div class="controls">
 									<select class="select2" name="genre_id" style="width:150px;">
 										<?php 
@@ -80,8 +80,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Publishing Year </label>
-								<span class="help">- year of publishing time</span>
+								<label class="form-label">Año de publicación </label>
+								<span class="help">-</span>
 								<div class="controls">
 									<select class="select2" name="year" style="width:150px;">
 										<?php for ($i = date("Y"); $i > 2000 ; $i--):?>
@@ -93,8 +93,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Rating </label>
-								<span class="help">- star rating of the movie</span>
+								<label class="form-label">Clasificación</label>
+								<span class="help">-</span>
 								<div class="controls">
 									<select class="select2" name="rating" style="width:150px;">
 										<?php for ($i = 0; $i <= 5 ; $i++):?>
@@ -106,12 +106,12 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Featured </label>
-								<span class="help">- featured movie will be shown in home page</span>
+								<label class="form-label">Destacadas</label>
+								<span class="help">-</span>
 								<div class="controls">
 									<select class="select2" name="featured" style="width:150px;">
 										<option value="0">No</option>
-										<option value="1">Yes</option>
+										<option value="1">Si</option>
 									</select>
 								</div>
 							</div>
@@ -119,15 +119,15 @@
 						<!-- PREVIEW OF THE VIDEO FILE -->
 						<div class="col-md-6 col-sm-12 col-xs-12">
 							<div class="form-group">
-								<label class="form-label">Preview:</label>
+								<label class="form-label">Avance:</label>
 								<div id="video_player_div"></div>
 							</div>
 						</div>
 					</div>
 					<hr>
 					<div class="form-group">
-						<input type="submit" class="btn btn-success col-md-3 col-sm-12 col-xs-12" value="Create Movie" style="margin:0px 5px 5px 0px;">
-						<a href="<?php echo base_url();?>index.php?admin/movie_list" class="btn btn-default col-md-3 col-sm-12 col-xs-12">Go back</a>
+						<input type="submit" class="btn btn-success col-md-3 col-sm-12 col-xs-12" value="Crear Canal" style="margin:0px 5px 5px 0px;">
+						<a href="<?php echo base_url();?>index.php?admin/movie_list" class="btn btn-default col-md-3 col-sm-12 col-xs-12">Regresa</a>
 					</div>
 				</form>
 			</div>

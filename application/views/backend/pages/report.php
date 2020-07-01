@@ -2,28 +2,29 @@
 	<div class="span12">
 		<div class="grid simple ">
 			<div class="grid-title" style="text-align: center;">
-				<h4>Subscription history </h4>
+				<h4>Historial de suscripciones </h4>
 				<br>
 				<select class="select2" name="month" style="width:200px;" id="month">
-					<option value="January" 	<?php if($month == 'January')echo 'selected';?>>January</option>
-					<option value="February" 	<?php if($month == 'February')echo 'selected';?>>February</option>
-					<option value="March" 		<?php if($month == 'March')echo 'selected';?>>March</option>
-					<option value="April" 		<?php if($month == 'April')echo 'selected';?>>April</option>
-					<option value="May" 		<?php if($month == 'May')echo 'selected';?>>May</option>
-					<option value="June" 		<?php if($month == 'June')echo 'selected';?>>June</option>
-					<option value="July" 		<?php if($month == 'July')echo 'selected';?>>July</option>
-					<option value="August" 		<?php if($month == 'August')echo 'selected';?>>August</option>
-					<option value="September" 	<?php if($month == 'September')echo 'selected';?>>September</option>
-					<option value="October" 	<?php if($month == 'October')echo 'selected';?>>October</option>
-					<option value="November" 	<?php if($month == 'November')echo 'selected';?>>November</option>
-					<option value="December" 	<?php if($month == 'December')echo 'selected';?>>December</option>
+					<option value="January" 	<?php if($month == 'January')echo 'selected';?>>Enero</option>
+					<option value="February" 	<?php if($month == 'February')echo 'selected';?>>Febrero</option>
+					<option value="March" 		<?php if($month == 'March')echo 'selected';?>>Marzo</option>
+					<option value="April" 		<?php if($month == 'April')echo 'selected';?>>Abril</option>
+					<option value="May" 		<?php if($month == 'May')echo 'selected';?>>Mayo</option>
+					<option value="June" 		<?php if($month == 'June')echo 'selected';?>>Junio</option>
+					<option value="July" 		<?php if($month == 'July')echo 'selected';?>>Julio</option>
+					<option value="August" 		<?php if($month == 'August')echo 'selected';?>>Agosto</option>
+					<option value="September" 	<?php if($month == 'September')echo 'selected';?>>Septiembre</option>
+					<option value="October" 	<?php if($month == 'October')echo 'selected';?>>Octubre</option>
+					<option value="November" 	<?php if($month == 'November')echo 'selected';?>>Noviembre</option>
+					<option value="December" 	<?php if($month == 'December')echo 'selected';?>>Deciembre</option>
 				</select>
 				<select class="select2" style="width:200px;" id="year">
+					<option value="2019" <?php if($year == '2019')echo 'selected';?>>2020</option>
 					<option value="2019" <?php if($year == '2019')echo 'selected';?>>2019</option>
 					<option value="2018" <?php if($year == '2018')echo 'selected';?>>2018</option>
 					<option value="2017" <?php if($year == '2017')echo 'selected';?>>2017</option>
 				</select>
-				<button type="button" onClick="submit()" class="btn btn-success btn-cons" style="margin:0px;">Filter</button>
+				<button type="button" onClick="submit()" class="btn btn-success btn-cons" style="margin:0px;">Filtrar</button>
 				<script>
 					function submit()
 					{
@@ -40,11 +41,11 @@
 							<th>
 								#
 							</th>
-							<th>Date</th>
-							<th>Purchased Package</th>
-							<th>Paid Amount</th>
-							<th>Method</th>
-							<th>User</th>
+							<th>Fecha</th>
+							<th>Paquete comprado</th>
+							<th>Monto de pago</th>
+							<th>Método</th>
+							<th>Usuario</th>
 						</tr>
 					</thead>
 					<tbody>

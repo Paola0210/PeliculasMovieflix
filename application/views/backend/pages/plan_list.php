@@ -2,7 +2,7 @@
 	<div class="span12">
 		<div class="grid simple ">
 			<div class="grid-title">
-				<h4>Package List</h4>
+				<h4>Lista de paquetes</h4>
 			</div>
 			<div class="grid-body ">
 				<table class="table table-hover table-condensed" id="example">
@@ -11,11 +11,11 @@
 							<th>
 								#
 							</th>
-							<th>Package Name</th>
-							<th>Available Screen</th>
-							<th>Price</th>
-							<th>Status</th>
-							<th>Operation</th>
+							<th>Nombre del paquete</th>
+							<th>Pantalla disponible</th>
+							<th>Precio</th>
+							<th>Estado</th>
+							<th>Operación</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -43,7 +43,7 @@
 							</td>
 							<td>
 								<a href="<?php echo base_url();?>index.php?admin/plan_edit/<?php echo $row['plan_id'];?>" class="btn btn-info btn-xs btn-mini">
-								edit</a>
+								Editar</a>
 							</td>
 						</tr>
 						<?php endforeach;?>
