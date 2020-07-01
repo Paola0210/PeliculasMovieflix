@@ -5,8 +5,8 @@
 		<a href="<?php echo base_url();?>index.php?home">
 		<img src="<?php echo base_url();?>/assets/global/logo.png" style="margin: 18px 40px; height: 50px;" />
 		</a>
-		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" style="margin-left: 90%;padding-top: 07px;margin-top: -130px;" >INICIAR</a>
-		<a target="_blank" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn2 btn-danger2 btn-sm2" style="color: fff; "> <img style="height:35px; margin-right:10px; padding-left:4px; padding-bottom:3px;" src="<?php echo base_url();?>/assets/global/icono1.png"><strong>Descarga App</strong></a>
+		<a href="<?php echo base_url();?>index.php?home/signin" class="btn btn-danger" style="margin-left: 0;padding-top: 07px;margin-top: -20px;" >INICIAR</a>
+		<a target="_blank" href="<?php echo base_url();?>assets/global/_Bienvenido_MOVIEFLIX_11163072.apk" class="btn2 btn-danger2 btn-sm2" style="color: fff; "> <img style="height:25px; margin-right:10px; padding-left:4px; padding-bottom:3px;" src="<?php echo base_url();?>/assets/global/icono1.png"><strong>Descarga App</strong></a>
 		
 	<!-- nombre de la app -->		
 	<div style="border-color: #4000FF;">	</div>
