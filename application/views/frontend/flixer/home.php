@@ -12,11 +12,16 @@
 	
 	?>
 <div style="height:95vh;width:100%;background-image: url(<?php echo $this->crud_model->get_poster_url('movie' , $featured_movie->movie_id);?>); background-size:cover;">
-	<div style="font-size: 400%;font-weight: bold;clear: both;padding: 140px 0px 0px 30px;color: #fff;">
+	<div style="font-size: 400%;font-weight: bold;clear: both;padding: 140px 0px 0px 30px;color: <?php echo $featured_movie->color;?>;">
 		<?php echo $featured_movie->title;?>
-		<div style="font-size: 20px; letter-spacing: .2px; color: #fff; font-weight: 400;">
-			<?php echo $featured_movie->description_short;?>
+		<br>
+		<div>
+		 <h5
+		 style="font-size: 28px; weight: bold;clear: both;letter-spacing: .2px; color: <?php echo $featured_movie->colord;?>; font-weight: 400;">
+		 <?php echo $featured_movie->description_short;?>
+	     </h5>
 		</div>
+		
 		<a href="<?php echo base_url();?>index.php?browse/playmovie/<?php echo $featured_movie->movie_id;?>" 
 			class="btn btn-danger btn-lg" style="font-size: 20px;"> 
 		<b><i class="fa fa-play"></i> PLAY</b>

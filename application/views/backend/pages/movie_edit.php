@@ -16,6 +16,9 @@
 								<span class="help"></span>
 								<div class="controls">
 									<input type="text" class="form-control" name="title" value="<?php echo $movie_detail->title;?>">
+									<br>
+									<label> Seleccionar Color:<input type="color" name="color"  list=""value="<?php echo $movie_detail->color;?>">
+									</label>
 								</div>
 							</div>
 							<div class="form-group">
@@ -45,6 +48,9 @@
 								<span class="help"></span>
 								<div class="controls">
 									<textarea class="form-control" name="description_short"><?php echo $movie_detail->description_short;?></textarea>
+									<br>									<br>
+									<label> Seleccionar Color:<input type="color" name="colord"  list=""value="<?php echo $movie_detail->colord;?>">
+									</label>
 								</div>
 							</div>
 							<div class="form-group">

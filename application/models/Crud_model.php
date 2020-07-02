@@ -240,7 +240,9 @@ class Crud_model extends CI_Model {
 	function create_movie()
 	{
 		$data['title']				=	$this->input->post('title');
+		$data['color']				=	$this->input->post('color');
 		$data['description_short']	=	$this->input->post('description_short');
+		$data['colord']				=	$this->input->post('colord');
 		$data['description_long']	=	$this->input->post('description_long');
 		$data['year']				=	$this->input->post('year');
 		$data['rating']				=	$this->input->post('rating');
@@ -290,7 +292,9 @@ class Crud_model extends CI_Model {
 	function update_movie($movie_id = '')
 	{
 		$data['title']				=	$this->input->post('title');
+		$data['color']				=	$this->input->post('color');
 		$data['description_short']	=	$this->input->post('description_short');
+		$data['colord']				=	$this->input->post('colord');
 		$data['description_long']	=	$this->input->post('description_long');
 		$data['year']				=	$this->input->post('year');
 		$data['rating']				=	$this->input->post('rating');

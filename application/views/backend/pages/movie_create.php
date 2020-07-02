@@ -12,6 +12,9 @@
 								<span class="help"></span>
 								<div class="controls">
 									<input type="text" class="form-control" name="title">
+									<br>
+									<label> seleccionar color:<input type="color" name="color"  list="">
+									</label>
 								</div>
 							</div>
 							<div class="form-group">
@@ -40,6 +43,9 @@
 								<span class="help"></span>
 								<div class="controls">
 									<textarea class="form-control" name="description_short"></textarea>
+									<br>
+									<label> seleccionar color:<input type="color" name="colord"  list="">
+									</label>
 								</div>
 							</div>
 							<div class="form-group">
@@ -127,7 +133,7 @@
 					<hr>
 					<div class="form-group">
 						<input type="submit" class="btn btn-success col-md-3 col-sm-12 col-xs-12" value="Crear Canal" style="margin:0px 5px 5px 0px;">
-						<a href="<?php echo base_url();?>index.php?admin/movie_list" class="btn btn-default col-md-3 col-sm-12 col-xs-12">Regresa</a>
+						<a href="<?php echo base_url();?>index.php?admin/movie_list" class="btn btn-default col-md-3 col-sm-12 col-xs-12">Regresar</a>
 					</div>
 				</form>
 			</div>
