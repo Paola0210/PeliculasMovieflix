@@ -11,7 +11,7 @@
 	$featured_movie		=	$this->db->get_where('movie', array('featured'=>1))->row();
 	
 	?>
-<?php /*?><div style="height:105vh;width:100%;background-image: url(<?php echo $this->crud_model->get_poster_url('movie' , $featured_movie->movie_id);?>); background-size:cover;">
+<div style="height:95vh;width:100%;background-image: url(<?php echo $this->crud_model->get_poster_url('movie' , $featured_movie->movie_id);?>); background-size:cover;">
 	<div style="font-size: 400%;font-weight: bold;clear: both;padding: 140px 0px 0px 30px;color: #fff;">
 		<?php echo $featured_movie->title;?>
 		<div style="font-size: 20px; letter-spacing: .2px; color: #fff; font-weight: 400;">
@@ -37,7 +37,7 @@
 		</a>
 		</span>
 	</div>
-</div><?php */?>
+</div>
 <script>
 	// submit the add/delete request for mylist
 	// type = movie/series, task = add/delete, id = movie_id/series_id
