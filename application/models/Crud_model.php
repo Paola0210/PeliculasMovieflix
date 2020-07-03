@@ -247,6 +247,7 @@ class Crud_model extends CI_Model {
 		$data['year']				=	$this->input->post('year');
 		$data['rating']				=	$this->input->post('rating');
 		$data['genre_id']			=	$this->input->post('genre_id');
+		$data['formato']			=	$this->input->post('formato');
 		$data['featured']			=	$this->input->post('featured');
 		$data['url']				=	$this->input->post('url');
 		
@@ -299,6 +300,7 @@ class Crud_model extends CI_Model {
 		$data['year']				=	$this->input->post('year');
 		$data['rating']				=	$this->input->post('rating');
 		$data['genre_id']			=	$this->input->post('genre_id');
+		$data['formato']			=	$this->input->post('formato');
 		$data['featured']			=	$this->input->post('featured');
 		$data['url']				=	$this->input->post('url');
 		

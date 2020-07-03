@@ -85,6 +85,18 @@
 									</select>
 								</div>
 							</div>
+							
+							<div class="form-group">
+								<label class="form-label">Formato </label>
+								<span class="help">-</span>
+								<div class="controls">
+									<select class="select2" name="formato" style="width:150px;">
+										<option value="video/mp4">MP4</option>
+										<option value="application/x-mpegURL">M3U8</option>
+									</select>
+								</div>
+							</div>
+							
 							<div class="form-group">
 								<label class="form-label">Año de publicación </label>
 								<span class="help">-</span>

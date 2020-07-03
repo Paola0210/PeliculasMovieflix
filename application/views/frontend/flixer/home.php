@@ -17,7 +17,7 @@
 		<br>
 		<div>
 		 <h5
-		 style="font-size: 28px; weight: bold;clear: both;letter-spacing: .2px; color: <?php echo $featured_movie->colord;?>; font-weight: 400;">
+		 style="font-size: 20px; weight: bold;clear: both;letter-spacing: .2px;text-align:justify; color: <?php echo $featured_movie->colord;?>; font-weight: 400;width:40%;">
 		 <?php echo $featured_movie->description_short;?>
 	     </h5>
 		</div>
