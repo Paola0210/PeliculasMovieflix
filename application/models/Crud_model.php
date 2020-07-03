@@ -231,12 +231,19 @@ class Crud_model extends CI_Model {
 	function get_movies($genre_id, $limit = NULL, $offset = 0) 
 	{
         
-        $this->db->order_by('movie_id', 'desc');
+        $this->db->order_by('movie_id', 'asc');
         $this->db->where('genre_id', $genre_id);
         $query = $this->db->get('movie', $limit, $offset);
         return $query->result_array();
     }
-	
+	function get_movies1($movie_id) 
+	{
+        
+        //$this->db->order_by('movie_id', 'desc');
+        $this->db->where('movie_id', $movie_id);
+        $query = $this->db->get('movie');
+        return $query->result_array();
+    }
 	function create_movie()
 	{
 		$data['title']				=	$this->input->post('title');
@@ -247,7 +254,6 @@ class Crud_model extends CI_Model {
 		$data['year']				=	$this->input->post('year');
 		$data['rating']				=	$this->input->post('rating');
 		$data['genre_id']			=	$this->input->post('genre_id');
-		$data['formato']			=	$this->input->post('formato');
 		$data['featured']			=	$this->input->post('featured');
 		$data['url']				=	$this->input->post('url');
 		
@@ -300,7 +306,6 @@ class Crud_model extends CI_Model {
 		$data['year']				=	$this->input->post('year');
 		$data['rating']				=	$this->input->post('rating');
 		$data['genre_id']			=	$this->input->post('genre_id');
-		$data['formato']			=	$this->input->post('formato');
 		$data['featured']			=	$this->input->post('featured');
 		$data['url']				=	$this->input->post('url');
 		

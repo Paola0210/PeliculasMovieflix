@@ -4,7 +4,7 @@
 		<div class="tiles blue weather-widget ">
 			<div class="tiles-body">
 				<div class="heading">
-					<div class="pull-left"> Total Canales HD</div>
+					<div class="pull-left"> Total Canales </div>
 					<div class="pull-right">
 						<?php echo $this->db->from('movie')->count_all_results();?>
 					</div>
@@ -21,14 +21,15 @@
 	</div>
 	
 	
-
-
+</div>
+<div style="margin: 20px;"></div>
+<div class="row">
 	<!-- TOTAL DE USUARIOS -->
 	<div class="col-md-4 col-sm-12 ">
 		<div class="tiles black  weather-widget ">
 			<div class="tiles-body">
 				<div class="heading">
-					<div class="pull-left"> Total de usuarios</div>
+					<div class="pull-left"> Total de usuarios registrados </div>
 					<div class="pull-right">
 						<?php echo $this->db->from('user')->count_all_results();?>
 					</div>
@@ -74,8 +75,7 @@
 		</div>
 	</div>
 	<!-- Ventas de este mes -->
-	
-	<div class="col-md-4 col-sm-12 " style="margin-top: 20px">
+	<div class="col-md-4 col-sm-12 ">
 		<div class="tiles red weather-widget ">
 			<div class="tiles-body">
 				<div class="heading">
@@ -101,5 +101,5 @@
 			<div class="tile-footer">
 			</div>
 		</div>
-	</div>	
+	</div>
 </div>

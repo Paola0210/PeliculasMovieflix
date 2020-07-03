@@ -12,7 +12,7 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12 col-xs-12">
 							<div class="form-group">
-								<label class="form-label">Título Canal</label>
+								<label class="form-label">Título de la película</label>
 								<span class="help"></span>
 								<div class="controls">
 									<input type="text" class="form-control" name="title" value="<?php echo $movie_detail->title;?>">
@@ -102,19 +102,6 @@
 									</select>
 								</div>
 							</div>
-							
-							<div class="form-group">
-								<label class="form-label">Formato </label>
-								<span class="help">-</span>
-								<div class="controls">
-									
-									<select class="select2" name="formato" style="width:150px;">
-									<option value="video/mp4" <?php if ( $movie_detail->formato == "video/mp4") echo 'selected';?>>MP4</option>
-								<option value="application/x-mpegURL" <?php if ( $movie_detail->formato == "application/x-mpegURL") echo 'selected';?>>M3U8</option>
-									</select>
-								</div>
-							</div>
-							
 							<div class="form-group">
 								<label class="form-label">Año de publicación </label>
 								<span class="help">- año de publicación</span>

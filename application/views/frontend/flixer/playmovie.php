@@ -1,6 +1,7 @@
 <?php include 'header_browse.php';?>
 <?php
 	$movie_details	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))->result_array();
+$movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))->row();
 	foreach ($movie_details as $row):
 	?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/hovercss/demo.css" />
@@ -28,13 +29,52 @@
 	.select_black{background-color: #000;height: 45px;padding: 12px;font-weight: bold;color: #fff;}
 	.profile_manage{font-size: 25px;border: 1px solid #ccc;padding: 5px 30px;text-decoration: none;}
 	.profile_manage:hover{font-size: 25px;border: 1px solid #fff;padding: 5px 30px;text-decoration: none;color:#fff;}
+.main-preview-player {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}	
+.player-container {
+  background: #1a1a1a;
+  overflow: auto;
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.video-js,
+.playlist-container {
+  position: relative;
+  min-width: 300px;
+  min-height: 150px;
+  height: 0; 
+}
+
+.video-js {
+  width: 70%;
+  float: left;
+  flex: 3 1 70%;
+}
+.vjs-playlist {
+  width: 30%;
+  float: right;
+	flex: 1 1 30%;
+}
+
+.vjs-playlist {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 </style>
 <!-- VIDEO PLAYER -->
 <div class="video_cover">
 	<div class="container" style="padding-top:100px; text-align: center;">
 		<div class="row">
 			<div class="col-lg-12">
-				<script src="https://content.jwplatform.com/libraries/O7BMTay5.js"></script>
+<?php /*?>				<script src="https://content.jwplatform.com/libraries/O7BMTay5.js"></script>
 				<div id="video_player_div"><?php echo $row['title'];?></div>
 				<script> 
 				jwplayer("video_player_div").setup({
@@ -56,7 +96,129 @@
 					
 					
 					
-				</script>
+				</script><?php */?>
+            	<link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/video.js/dist/video-js.css" />
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.css" />
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui-master/examples.css" />
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-resolution-switcher/lib/videojs-resolution-switcher.css" />
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-font/css/videojs-icons.css" />
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.vertical.css" />
+                <section class="main-preview-player">
+                  <video id="preview-player" class="video-js vjs-fluid vjs-big-play-centered " preload="auto" crossorigin="anonymous" data-setup='{}'>
+                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 hola</a></p>
+                  </video>             
+                
+                  <div class="playlist-container  preview-player-dimensions vjs-fluid" data-for="preview-player">
+                    <ol class="vjs-playlist"></ol>
+                  </div>
+                </section>
+                <button class="previous vjs-icon-previous-item"></button>
+  				<button class="next vjs-icon-next-item"></button>
+			</div>
+            
+            <script type="text/javascript" src="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/video.js/dist/video.js"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script type="text/javascript" src="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist/dist/videojs-playlist.js"></script>
+            <script type="text/javascript" src="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.js"></script>
+            <script type="text/javascript" src="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-resolution-switcher/lib/videojs-resolution-switcher.js"></script>
+            <script type="text/javascript" src="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-chapter-nav/dist/videojs.chapter-nav.js"></script>
+                       
+           <script>
+			  
+		   </script>           
+            <script>
+			 // botonnes de control reproductor
+			   var myCustomSrcPicker = function(player,src,label){
+						  // select any source you want
+						  return _p.src(selectedSource);
+						}
+		   		var player = videojs('preview-player',{
+					controls: true,
+					nextButton: true,
+					autoplay: true,					
+					playbackRates: [0.5, 1, 1.5],
+					 plugins: {	
+						 videoJsResolutionSwitcher: {
+							  default: 'low',
+							  customSourcePicker: myCustomSrcPicker
+							}
+				  }
+					});
+				// lista de reproduccion se creo variable idpelicula 
+            var player = videojs('preview-player');	
+			var videoList = [<?php
+						$counter	=	0;
+						$movie_details	=	$this->crud_model->get_movies($row['genre_id'] , 20, 0);
+						foreach ($movie_details as $row):
+						?>{
+					idPelicula: <?php echo $row['movie_id']?>,
+				  name: '<?php echo $row['title'];?>',
+				
+				  sources: [
+					{ 	src: '<?php echo $row['url'];?>', 
+						type: 'video/mp4',
+						label: '720' },							
+				  ],
+				
+
+				  // you can use <picture> syntax to display responsive images
+				  thumbnail: [
+					{
+					  srcset: '<?php echo $this->crud_model->get_movies('movie' , $row['movie_id']);?>',
+					  type: 'image/jpeg',
+					  media: '(min-width: 400px;)'
+					},
+					{
+					  src: '<?php echo $this->crud_model->get_poster_url('movie' , $row['movie_id']);?>',
+					}
+				  ]
+				},<?php endforeach;?>];
+				var player = videojs(document.querySelector('video'), {
+					  inactivityTimeout: 0
+					});
+
+					try {
+					  // try on ios
+					  player.volume(0);
+					} catch (e) {}
+
+					player.on([
+					  'duringplaylistchange',
+					  'playlistchange',
+					  'beforeplaylistitem',
+					  'playlistitem',
+					  'playlistsorted'
+					], function(e) {
+					  videojs.log('player saw "' + e.type + '"');
+					});
+				//Lista lateral
+					player.playlistUi();					
+				//auto reproduccion siguiente video
+					player.playlist.autoadvance(0);
+				
+				//declaramos variable indexActual;
+				//se recorre array videoList y se compara el idPelicula con el id de la pelicula que viene por get y se guarda en indexActual;
+				var indexActual=0;
+				$(videoList).each(function(index){
+					if($(videoList[index]).attr("idPelicula")==<?php echo $movie_id ?>){
+						indexActual=index;	   
+					   }
+					
+				});
+					player.playlist(videoList);
+				//se cambia el curren item por variable indexActual
+					player.playlist.currentItem(indexActual);
+					//Botones de navegacion
+					document.querySelector('.previous').addEventListener('click', function() {
+					  player.playlist.previous();
+					});
+
+					document.querySelector('.next').addEventListener('click', function() {
+					  player.playlist.next();
+					});
+				// Initialize the playlist-ui plugin with no option (i.e. the defaults).			
+				
+			</script> 
 			</div>
 		</div>
 	</div>
@@ -67,22 +229,22 @@
 		<div class="col-lg-8">
 			<div class="row">
 				<div class="col-lg-2">
-					<img src="<?php echo $this->crud_model->get_thumb_url('movie' , $row['movie_id']);?>" style="height: 60px; margin:20px;" />
+					<img src="<?php echo $this->crud_model->get_thumb_url('movie' , $movie_id);?>" style="height: 60px; margin:20px;" />
 				</div>
 				<div class="col-lg-10">
 					<!-- VIDEO TITLE -->
 					<h3>
-						<?php echo $row['title'];?>
+						<?php echo $movie_details2->title;?>
 					</h3>
 					<!-- RATING CALCULATION -->
 					<div>
 						<?php
-							for($i = 1 ; $i <= $row['rating'] ; $i++):
+							for($i = 1 ; $i <= $movie_details2->rating ; $i++):
 							?>
 						<i class="fa fa-star" aria-hidden="true"></i>
 						<?php endfor;?>
 						<?php
-							for($i = 5 ; $i > $row['rating'] ; $i--):
+							for($i = 5 ; $i > $movie_details2->rating ; $i--):
 							?>
 						<i class="fa fa-star-o" aria-hidden="true"></i>
 						<?php endfor;?>
@@ -216,6 +378,7 @@
 										include 'thumb.php';
 									}
 									?>
+								
 							</div>
 						</div>
 						</p>
