@@ -99,7 +99,7 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 				</script><?php */?>
             	<link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/video.js/dist/video-js.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.css" />
-                <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui-master/examples.css" />
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/examples.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-resolution-switcher/lib/videojs-resolution-switcher.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-font/css/videojs-icons.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.vertical.css" />
