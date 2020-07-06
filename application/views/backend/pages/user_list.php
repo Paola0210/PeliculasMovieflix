@@ -43,9 +43,12 @@
 									 
 								 
 								
-							 <?php /*?> activacion y desactivacion  de usuarios validando suscripcion<?php */?>
+							 <?php /*?> activacion y desactivacion, y administrar canales  de usuarios validando suscripcion<?php */?>
 									<?php if(isset($suscripcion_actual)&& ( $date_actual<=intval($suscripcion_actual->timestamp_to) && $suscripcion_actual->status==1)){ ?> <a href="<?php echo base_url();?>index.php?admin/desactivar/<?php echo $row['user_id'];?>" class="btn btn-blue btn-xs btn-mini">
-									Desactivar</a><?php }else{ ?>
+									Desactivar</a>
+									<a href="<?php echo base_url();?>index.php?admin/select_canales/<?php echo $row['user_id'];?>" class="btn btn-success btn-xs btn-mini">
+									Canales</a>
+								<?php }else{ ?>
 										<a href="<?php echo base_url();?>index.php?admin/activar/<?php echo $row['user_id'];?>" class="btn btn-info btn-xs btn-mini">
 									 Activar</a>
 									<?php }?>
@@ -56,7 +59,7 @@
 					         </form>
 								
 							</td>
-							<td><?php if($date_actual<=intval($suscripcion_actual->timestamp_to) && $suscripcion_actual->status==1){
+							<td><?php if(isset($suscripcion_actual)&& $date_actual<=intval($suscripcion_actual->timestamp_to) && $suscripcion_actual->status==1){
 										$plan_v =$this->db->get_where("plan",array('plan_id' => $suscripcion_actual->plan_id))->row();
 										echo $plan_v->name;
 									}?></td>
@@ -69,7 +72,7 @@
 				<a style="margin: 10px;" href="<?php echo base_url();?>index.php?admin/exportar_activos_en_csv" target="_blank" class="btn btn-primary btn-xs btn-mini">
 									 Generar CSV</a>
 									 <!-- Este es el form para el cargue de el archivo csv con la lista a desactivar-->
-									 <form method="post" action="<?php echo $base_url;?>index.php?admin/importar_csv_para_desactivar" enctype="multipart/form-data">
+									 <form method="post" action="<?php echo base_url();?>index.php?admin/importar_csv_para_desactivar" enctype="multipart/form-data">
 									 <label>Cargar Archivo</label>
 									 <input type="file" id="cargar_csv" name="cargar_csv" accept=".csv" required="true">
 									 <input type="submit" class="btn btn-warning btn-xs btn-mini" value="Desactivar Usuarios">

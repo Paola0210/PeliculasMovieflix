@@ -155,15 +155,16 @@
 									</select>
 								</div>
 							</div>
+							<!-- Codigo de vista correspondiente a los planes a los que esta asignado este canal -->
 							<div class="form-group">
 								<label class="form-label">Planes a los que se encuentra asignado el canal</label>
 								<table style="border-collapse: separate;border-spacing: 10px 5px;">
 									<div class="controls">
 									<tr >
 										
-										<td align="center"><input type="checkbox" name="planBasic" class="custom-control-input" id="defaultUnchecked"></td>
-								    	<td align="center"><input type="checkbox" name="planStandard" class="custom-control-input" id="defaultUnchecked"></td>
-								    	<td align="center"><input type="checkbox" name="planPremium" class="custom-control-input" id="defaultUnchecked"></td>
+										<td align="center"><input <?= ($movie_detail->planBasic==="on") ? "checked":"" ?> type="checkbox" name="planBasic" class="custom-control-input" id="defaultUnchecked"></td>
+								    	<td align="center"><input <?= ($movie_detail->planStandard==="on") ? "checked":"" ?> type="checkbox" name="planStandard" class="custom-control-input" id="defaultUnchecked"></td>
+								    	<td align="center"><input <?= ($movie_detail->planPremium==="on") ? "checked":"" ?> type="checkbox" name="planPremium" class="custom-control-input" id="defaultUnchecked"></td>
 								    
 									</tr>
 									<tr>

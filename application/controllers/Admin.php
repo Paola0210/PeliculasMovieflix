@@ -157,9 +157,46 @@ class Admin extends CI_Controller {
 		}
 
 	}
+	//metodo para administrar canales del usuario
+	function select_canales($user_id2=''){
+		//cargo la vista que deseo que es seleccionar_canales
+		$page_data['page_name']		=	'seleccionar_canales';
+		$user_var =$this->db->get_where("user", array('user_id' => $user_id2))->row();
+		//dinamiso el titulo con el email de el usuario consultado;
+		$page_data['page_title']	=	'Administrar Canales del Usuario '.$user_var->email;
+		//paso la variable $user_id2 a la siguiente pagina para consultarlo
+		$page_data['user_id2']=$user_id2;
+		$this->load->view('backend/index', $page_data);
+	}
+	//activa y desactiva automaticamente segun como esten los registros
+	function activar_desactivar_canales_al_usuario($canal_id1='',$user_id4=''){
+		//verifica si tiene registros en tabla de canales_asignados_usuario
+		$verificar = $this->crud_model->obtener_canal_usuario($canal_id1,$user_id4);
+		if(isset($verificar)){
+			//y si el estatus es activo actualiza el registro a inactivo y si es inactivo a activo
+			if($verificar->status==="0"){
+				$data['status']="1";
+			}else{
+				$data['status']="0";
+			}
+				$this->db->update("canales_asignados_usuario",$data,array("id_canales_asignados_usuario"=>$verificar->id_canales_asignados_usuario));
+		}else{
+			//de lo contrario crea un registro en canales_asignados_usuario
+			$data['id_canal']=$canal_id1;
+			$data['id_usuario']=$user_id4;
+			//verifica si esta activo este canal si lo es crea el registo desactivado y si esta desactivado lo crea activo
+			if($this->crud_model->validar_canal_usuario($canal_id1,$user_id4)){
+			$data['status']='0';	
+			}else{
+			$data['status']='1';
+			}			
+			$this->db->insert('canales_asignados_usuario',$data);	
+		}
+		redirect(base_url()."index.php?admin/select_canales/".$user_id4);		
+	}
 	// activar usuarios o suscribirlos 
 	function activar($user_id1 = '')
-		
+
 		//tuve que cambiar el nombre de la variable por $user_id1 por temas de conflictos de nombres
 	{
 		if (isset($_POST) && !empty($_POST))

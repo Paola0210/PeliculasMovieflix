@@ -1,3 +1,4 @@
+
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
@@ -111,6 +112,47 @@ class Crud_model extends CI_Model {
         else if ($query->num_rows() == 0) {
 			return false;
 		}
+	}
+	function obtener_canal_usuario($id_canal,$id_usuario){
+			$canal_usuario=$this->db->get_where('canales_asignados_usuario',array("id_canal"=>$id_canal,"id_usuario"=>$id_usuario))->row();
+			if(isset($canal_usuario)){
+				return $canal_usuario;
+			}else{
+				return null;
+			}
+			
+	}
+	//devuelve true si el canal esta habilitado para el usuario y false si no lo esta en los dos casos
+	function validar_canal_usuario($id_canal,$id_usuario){
+		$var_canal_user = $this->crud_model->obtener_canal_usuario($id_canal,$id_usuario);
+		//caso uno que tenga un registro en la tabla canales_asignados_usuario
+		if(isset($var_canal_user)){
+			//si lo tiene y el status es 1 esta activo osea true
+			if($var_canal_user->status ==="1"){
+				return true;
+			}else{
+				//si lo tiene y el status es 0 esta inactivo osea false
+				return false;
+			}
+			
+		}else{
+		//o caso 2 en el que no tenga registro por lo tanto entra a validar con variables de plan que estan en la tabla movies
+			$suscripcion_var = $this->db->get_where("subscription",array('user_id' => $id_usuario ))->row();
+			$canal_var =$this->db->get_where('movie',array('movie_id' => $id_canal))->row();
+			//la validacion que hace es que plan tiene y de acuerdo al plan si este canal esta dentro de ese plan
+			if($suscripcion_var->plan_id ==="1" && $canal_var->planBasic==="on"){
+					return true;
+			}
+			if($suscripcion_var->plan_id ==="2" && $canal_var->planStandard==="on"){
+					return true;
+			}
+			if($suscripcion_var->plan_id ==="3" && $canal_var->planPremium==="on"){
+					return true;
+			}
+			
+		}
+		//en dado caso que no entre en ninguna validacion sera false 
+	return false;
 	}
 	
 	function get_subscription_detail($subscription_id)
@@ -257,6 +299,10 @@ class Crud_model extends CI_Model {
 		$data['formato']			=	$this->input->post('formato');
 		$data['featured']			=	$this->input->post('featured');
 		$data['url']				=	$this->input->post('url');
+		//agrege campos para validar los canales que tienen cada plan
+		$data['planBasic']			=	$this->input->post('planBasic');
+		$data['planStandard']		=	$this->input->post('planStandard');
+		$data['planPremium']		=	$this->input->post('planPremium');
 		
 		$actors						=	$this->input->post('actors');
 		$actor_entries				=	array();
@@ -299,6 +345,7 @@ class Crud_model extends CI_Model {
 	
 	function update_movie($movie_id = '')
 	{
+
 		$data['title']				=	$this->input->post('title');
 		$data['color']				=	$this->input->post('color');
 		$data['description_short']	=	$this->input->post('description_short');
@@ -310,7 +357,10 @@ class Crud_model extends CI_Model {
 		$data['formato']			=	$this->input->post('formato');
 		$data['featured']			=	$this->input->post('featured');
 		$data['url']				=	$this->input->post('url');
-		
+		//agrege campos para validar los canales que tienen cada plan
+		$data['planBasic']			=	$this->input->post('planBasic');
+		$data['planStandard']		=	$this->input->post('planStandard');
+		$data['planPremium']		=	$this->input->post('planPremium');
 		$actors						=	$this->input->post('actors');
 		$actor_entries				=	array();
 		$number_of_entries			=	sizeof($actors);
@@ -319,9 +369,7 @@ class Crud_model extends CI_Model {
 			array_push($actor_entries, $actors[$i]);
 		}
 		$data['actors']				=	json_encode($actor_entries);
-		
 		$this->db->update('movie', $data, array('movie_id'=>$movie_id));
-		
 		move_uploaded_file($_FILES['thumb']['tmp_name'], 'assets/global/movie_thumb/' . $movie_id . '.jpg');
 		move_uploaded_file($_FILES['poster']['tmp_name'], 'assets/global/movie_poster/' . $movie_id . '.jpg');
 		

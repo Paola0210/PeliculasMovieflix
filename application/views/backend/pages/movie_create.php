@@ -134,6 +134,27 @@
 									</select>
 								</div>
 							</div>
+							<!-- Codigo de vista correspondiente a los planes a los que esta asignado este canal -->
+							<div class="form-group">
+								<label class="form-label">Planes a los que se encuentra asignado el canal</label>
+								<table style="border-collapse: separate;border-spacing: 10px 5px;">
+									<div class="controls">
+									<tr >
+										
+										<td align="center"><input type="checkbox" name="planBasic" class="custom-control-input" id="defaultUnchecked"></td>
+								    	<td align="center"><input type="checkbox" name="planStandard" class="custom-control-input" id="defaultUnchecked"></td>
+								    	<td align="center"><input type="checkbox" name="planPremium" class="custom-control-input" id="defaultUnchecked"></td>
+								    
+									</tr>
+									<tr>
+										<td><label class="custom-control-label" for="defaultUnchecked">Basic</label></td>
+										<td><label class="custom-control-label" for="defaultUnchecked">Standard</label></td>
+										<td><label class="custom-control-label" for="defaultUnchecked">Premium</label></td>
+									</tr>
+									</div>
+								</table>
+								
+							</div>
 						</div>
 						<!-- PREVIEW OF THE VIDEO FILE -->
 						<div class="col-md-6 col-sm-12 col-xs-12">
