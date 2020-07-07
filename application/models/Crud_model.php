@@ -299,7 +299,6 @@ class Crud_model extends CI_Model {
 		$data['formato']			=	$this->input->post('formato');
 		$data['featured']			=	$this->input->post('featured');
 		$data['url']				=	$this->input->post('url');
-		//agrege campos para validar los canales que tienen cada plan
 		$data['planBasic']			=	$this->input->post('planBasic');
 		$data['planStandard']		=	$this->input->post('planStandard');
 		$data['planPremium']		=	$this->input->post('planPremium');
