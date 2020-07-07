@@ -149,7 +149,7 @@
 										</tr>
 									<tr>
 										<td><label class="custom-control-label" for="defaultUnchecked">Basico</label></td>
-										<td><label class="custom-control-label" for="defaultUnchecked">Standard</label></td>
+										<td><label class="custom-control-label" for="defaultUnchecked">Familiar</label></td>
 										<td><label class="custom-control-label" for="defaultUnchecked">Premium</label></td>
 									</tr>
 									</div>
