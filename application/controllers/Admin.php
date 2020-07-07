@@ -242,6 +242,7 @@ class Admin extends CI_Controller {
 			$data['status']=0;
 			
 			$this->db->update("subscription",$data,array("subscription_id"=>$suscripcion_actual->subscription_id));
+			$this->db->delete("canales_asignados_usuario",array("id_usuario"=>$user_id2));
 	
 		redirect(base_url().'index.php?admin/user_list' , 'refresh');
 
@@ -496,10 +497,11 @@ class Admin extends CI_Controller {
 		$a_eliminar =explode('-',$usuarios_seleccionados);
 		foreach ($a_eliminar as $key => $value) {
 			$this->db->delete('user',  array('user_id' =>$value));
+			$this->db->delete("canales_asignados_usuario",array("id_usuario"=>$user_id));
 		}
 		
 		$this->db->delete('user',  array('user_id' =>$user_id));
-		
+		$this->db->delete("canales_asignados_usuario",array("id_usuario"=>$user_id));
 		redirect(base_url().'index.php?admin/user_list' , 'refresh');
 	}
 	// WATCH SUBSCRIPTION, PAYMENT REPORT
