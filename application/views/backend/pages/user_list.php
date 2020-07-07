@@ -48,6 +48,7 @@
 									Desactivar</a>
 									<a href="<?php echo base_url();?>index.php?admin/select_canales/<?php echo $row['user_id'];?>" class="btn btn-success btn-xs btn-mini">
 									Canales</a>
+								 
 								<?php }else{ ?>
 										<a href="<?php echo base_url();?>index.php?admin/activar/<?php echo $row['user_id'];?>" class="btn btn-info btn-xs btn-mini">
 									 Activar</a>

@@ -52,12 +52,10 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 .video-js {
   width: 70%;
   float: left;
-  flex: 3 1 70%;
 }
 .vjs-playlist {
   width: 30%;
   float: right;
-	flex: 1 1 30%;
 }
 
 .vjs-playlist {
