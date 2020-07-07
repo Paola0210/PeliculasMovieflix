@@ -155,7 +155,12 @@ class Browse extends CI_Controller {
 	
 	function playmovie($movie_id = '')
 	{
-		$page_data['page_name']		=	'playmovie';
+		if($this->crud_model->validar_canal_usuario($movie_id,$this->session->userdata("user_id"))){
+			$page_data['page_name']		=	'playmovie';	
+		}else{
+			$page_data['page_name']="no_tiene_acceso_alcanal";
+		}
+		
 		$page_data['page_title']	=	'Ver pelicula';
 		$page_data['movie_id']		=	$movie_id;
 		$this->load->view('frontend/index', $page_data);
