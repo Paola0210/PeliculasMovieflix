@@ -189,7 +189,7 @@
 					<hr>
 					<div class="form-group">
 						<input type="submit" class="btn btn-success col-md-3 col-sm-12 col-xs-12" value="Actualizar Canales" style="margin:0px 5px 5px 0px;">
-						<a href="<?php echo base_url();?>index.php?admin/movie_list" class="btn btn-default col-md-3 col-sm-12 col-xs-12">Regresar</a>
+						<a href="<?php echo base_url();?>index.php?admin/<?=(isset($_SESSION['var_planes']))?'movie_list2/'.$_SESSION['var_planes']:'movie_list'?>" class="btn btn-default col-md-3 col-sm-12 col-xs-12">Regresar</a>
 					</div>
 				</form>
 			</div>

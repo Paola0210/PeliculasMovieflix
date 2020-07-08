@@ -260,6 +260,9 @@ class Admin extends CI_Controller {
 	{
 		$page_data['page_name']		=	'movie_list';
 		$page_data['page_title']	=	'Administrar Canales';
+		if(isset($_SESSION['var_planes'])){
+			$_SESSION['var_planes']=null;
+		}
 		$this->load->view('backend/index', $page_data);
 	}
 	function movie_list2($filtro='')
@@ -267,6 +270,7 @@ class Admin extends CI_Controller {
 		$page_data['page_name']		=	'movie_list';
 		$page_data['page_title']	=	'Administrar Canales';
 		$page_data['filtrox']=$filtro;
+		$_SESSION['var_planes']=$filtro;
 		$this->load->view('backend/index', $page_data);
 	}
 
@@ -289,7 +293,12 @@ class Admin extends CI_Controller {
 		if (isset($_POST) && !empty($_POST))
 		{
 			$this->crud_model->update_movie($movie_id);
-			redirect(base_url().'index.php?admin/movie_list' , 'refresh');
+			if(isset($_SESSION['var_planes'])){
+				redirect(base_url().'index.php?admin/movie_list2/'.$_SESSION['var_planes'] , 'refresh');	
+			}else{
+				redirect(base_url().'index.php?admin/movie_list' , 'refresh');	
+			}
+			
 		}
 		$page_data['movie_id']		=	$movie_id;
 		$page_data['page_name']		=	'movie_edit';

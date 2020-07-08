@@ -37,7 +37,10 @@ Crear Canales
 							  			$var_is_valid=true;
 							  		}else if($filtrox ==="3" && $row['planPremium']==="on"){
 							  			$var_is_valid=true;
+							  		}else if($filtrox===""){
+							  			$var_is_valid=true;
 							  		}
+
 							  }else{
 							  	$var_is_valid=true;
 							  } 
@@ -68,13 +71,15 @@ Crear Canales
 				</table>
 				<div class="form-group">
    				 <label for="slc_filtro">Filtro de Planes</label>
-				    <select class="form-control" i id="slc_filtro" onchange="filtrarPlanes();">
-				      <option value="">Todo</option>
-				      <option value="1">Plan Basic</option>
-				      <option value="2">Plan Stardard</option>
-				      <option value="3">Plan Premium</option>	
+				    <select class="form-control"  id="slc_filtro" onchange="filtrarPlanes();">
+
+				      <option value="" <?= (isset($_SESSION['var_planes']) && $_SESSION['var_planes'] ==="" )? 'selected' :''?> >Todo</option>
+				      <option value="1" <?= (isset($_SESSION['var_planes']) && $_SESSION['var_planes'] ==="1" )? 'selected' :''?> >Plan Basic</option>
+				      <option value="2" <?= (isset($_SESSION['var_planes']) && $_SESSION['var_planes'] ==="2" )? 'selected' :''?> >Plan Stardard</option>
+				      <option value="3" <?= (isset($_SESSION['var_planes']) && $_SESSION['var_planes'] ==="3" )? 'selected' :''?> >Plan Premium</option>	
 				    </select>
 				</div>
+				<?=$_SESSION['var_planes']?>
 			</div>
 		</div>
 	</div>
