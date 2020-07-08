@@ -262,6 +262,13 @@ class Admin extends CI_Controller {
 		$page_data['page_title']	=	'Administrar Canales';
 		$this->load->view('backend/index', $page_data);
 	}
+	function movie_list2($filtro='')
+	{
+		$page_data['page_name']		=	'movie_list';
+		$page_data['page_title']	=	'Administrar Canales';
+		$page_data['filtrox']=$filtro;
+		$this->load->view('backend/index', $page_data);
+	}
 
 	// CREATE A NEW MOVIE
 	function movie_create()

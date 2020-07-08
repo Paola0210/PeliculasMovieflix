@@ -1,4 +1,5 @@
 <a href="<?php echo base_url();?>index.php?admin/movie_create/" class="btn btn-primary" style="margin-bottom: 20px;">
+
 <i class="fa fa-plus"></i>
 Crear Canales
 </a>
@@ -27,6 +28,21 @@ Crear Canales
 							$counter = 1;
 							foreach ($movies as $row):
 							  ?>
+							  <?php 
+							  $var_is_valid=false;
+							  if(isset($filtrox)){
+							  		if($filtrox==="1" && $row['planBasic']==="on"){
+							  			$var_is_valid=true;
+							  		}else if($filtrox ==="2" && $row['planStandard']==="on"){
+							  			$var_is_valid=true;
+							  		}else if($filtrox ==="3" && $row['planPremium']==="on"){
+							  			$var_is_valid=true;
+							  		}
+							  }else{
+							  	$var_is_valid=true;
+							  } 
+							  if($var_is_valid){
+							  ?>
 						<tr>
 							<td style="vertical-align: middle;"><?php echo $counter++;?></td>
 							<td><img src="<?php echo $this->crud_model->get_thumb_url('movie' , $row['movie_id']);?>" style="height: 60px;" /></td>
@@ -46,10 +62,26 @@ Crear Canales
 								Borrar</a>
 							</td>
 						</tr>
+						<?php }?>
 						<?php endforeach;?>
 					</tbody>
 				</table>
+				<div class="form-group">
+   				 <label for="slc_filtro">Filtro de Planes</label>
+				    <select class="form-control" i id="slc_filtro" onchange="filtrarPlanes();">
+				      <option value="">Todo</option>
+				      <option value="1">Plan Basic</option>
+				      <option value="2">Plan Stardard</option>
+				      <option value="3">Plan Premium</option>	
+				    </select>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	function filtrarPlanes(){
+		console.log($("#slc_filtro option:selected").val());
+		window.location.replace("<?php echo base_url().'index.php?admin/movie_list2/';?>"+($("#slc_filtro option:selected").val()));
+	}
+</script>
