@@ -152,6 +152,7 @@ class Browse extends CI_Controller {
 		
 		$this->load->view('frontend/index', $page_data);
 	}
+	// aqui se debe pasar y cargar la alerta para saber que no tiene acceso al canal
 	
 	function playmovie($movie_id = '')
 	{
@@ -160,7 +161,7 @@ class Browse extends CI_Controller {
 		}else{
 			$page_data['page_name']="no_tiene_acceso_alcanal";
 		}
-		
+
 		$page_data['page_title']	=	'Ver pelicula';
 		$page_data['movie_id']		=	$movie_id;
 		$this->load->view('frontend/index', $page_data);

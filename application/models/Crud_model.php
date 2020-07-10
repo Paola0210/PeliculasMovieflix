@@ -278,6 +278,24 @@ class Crud_model extends CI_Model {
         $query = $this->db->get('movie', $limit, $offset);
         return $query->result_array();
     }
+//´para mostra solo los canales en la parte de reproduccion
+
+    function get_movies_detaill_list($genre_id, $limit = NULL, $offset = 0) 
+	{
+        
+        $this->db->order_by('movie_id', 'asc');
+        $this->db->where('genre_id', $genre_id);
+        $query = $this->db->get('movie', $limit, $offset);
+        $lista_sin_filtral=$query->result_array();
+        $lista_filtrada= array();
+        foreach ($lista_sin_filtral as $key => $row) {
+        	$var_is_valid=$this->crud_model->validar_canal_usuario($row['movie_id'],$this->session->userdata('user_id'));
+        	if($var_is_valid){
+        		$lista_filtrada[]=$row;
+        	}
+        }
+        return $lista_filtrada;
+    }
 	function get_movies1($movie_id) 
 	{
         

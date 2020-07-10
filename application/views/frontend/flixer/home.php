@@ -79,7 +79,7 @@
 		}
 	});
 </script>
-<!-- MY LIST, GENRE WISE LISTING & SLIDER -->
+<!-- MY LIST, GENRE WISE LISTING & SLIDER                   lista para canales -->
 <?php 
 	$genres		=	$this->crud_model->get_genres();
 		foreach ($genres as $row):

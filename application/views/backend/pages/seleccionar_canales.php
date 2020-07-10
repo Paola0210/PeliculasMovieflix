@@ -22,6 +22,7 @@
 					</thead>
 					<tbody>
 					
+									
 						<?php
 							$movies = $this->db->get('movie')->result_array();
 							$counter = 1;

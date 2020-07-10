@@ -142,11 +142,12 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 							}
 				  }
 					});
+		   		// aqui se caraga en  la lista 
 				// lista de reproduccion se creo variable idpelicula 
             var player = videojs('preview-player');	
 			var videoList = [<?php
 						$counter	=	0;
-						$movie_details	=	$this->crud_model->get_movies($row['genre_id'] , 20, 0);
+						$movie_details	=	$this->crud_model->get_movies_detaill_list($row['genre_id'] , 20, 0);
 						foreach ($movie_details as $row):
 						?>{
 					idPelicula: <?php echo $row['movie_id']?>,
@@ -162,7 +163,7 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 				  // you can use <picture> syntax to display responsive images
 				  thumbnail: [
 					{
-					  srcset: '<?php echo $this->crud_model->get_movies('movie' , $row['movie_id']);?>',
+					  srcset: '<?php echo $this->crud_model->get_movies_detaill_list('movie' , $row['movie_id']);?>',
 					  type: 'image/jpeg',
 					  media: '(min-width: 400px;)'
 					},
