@@ -47,7 +47,7 @@
 								<?php }else{?>
 									<a href="<?php echo base_url();?>index.php?admin/activar_desactivar_canales_al_usuario/<?php echo $row['movie_id'].'/'.$user_id2;?>" class="btn btn-danger btn-xs btn-mini">Desactivar</a>
 								<?php }?>
-								
+								hola
 							</td>
 						</tr>
 						<?php endforeach;?>
