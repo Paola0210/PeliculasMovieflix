@@ -155,7 +155,7 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 				
 				  sources: [
 					{ 	src: '<?php echo $row['url'];?>', 
-						type: 'video/mp4',
+						type: '<?php echo $row['formato'];?>',
 						label: '720' },							
 				  ],
 				
