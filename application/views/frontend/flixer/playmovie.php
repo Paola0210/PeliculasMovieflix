@@ -6,6 +6,7 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 	?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/hovercss/demo.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/hovercss/set1.css" />
+
 <style>
 	.movie_thumb{}
 	.btn_opaque{font-size:20px; border: 1px solid #939393;text-decoration: none;margin: 10px;background-color: rgba(0, 0, 0, 0.74); color: #fff;}
@@ -104,7 +105,8 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
                 <section class="main-preview-player">
                   <video id="preview-player" class="video-js vjs-fluid vjs-big-play-centered " preload="auto" crossorigin="anonymous" data-setup='{}'>
                     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 hola</a></p>
-                  </video>             
+                  </video> 
+                  
                 
                   <div class="playlist-container  preview-player-dimensions vjs-fluid" data-for="preview-player">
                     <ol class="vjs-playlist"></ol>
@@ -123,8 +125,11 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
                        
            <script>
 			  
-		   </script>           
+		   </script>  
+		   <script  src="<?=base_url() ?>assets/backend/hls2/dist/hls.js"></script>         
             <script>
+            	var url_actual="";
+            	try{
 			 // botonnes de control reproductor
 			   var myCustomSrcPicker = function(player,src,label){
 						  // select any source you want
@@ -198,9 +203,11 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 				//declaramos variable indexActual;
 				//se recorre array videoList y se compara el idPelicula con el id de la pelicula que viene por get y se guarda en indexActual;
 				var indexActual=0;
+
 				$(videoList).each(function(index){
 					if($(videoList[index]).attr("idPelicula")==<?php echo $movie_id ?>){
-						indexActual=index;	   
+						indexActual=index;	
+						url_actual=$(videoList[index]).attr("sources")[0].src;
 					   }
 					
 				});
@@ -215,8 +222,30 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 					document.querySelector('.next').addEventListener('click', function() {
 					  player.playlist.next();
 					});
+setTimeout(function() {
+		
+					 console.log("s");
+        var video = document.getElementById('preview-player_html5_api');
+        var de={
+  "debug": true,
+  "enableWorker": true,
+  "lowLatencyMode": true,
+   "backBufferLength": 800};
+        var hls = new Hls(de);
+        hls.loadSource(url_actual);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });	
+}, 1000);
+
+    
+   
 				// Initialize the playlist-ui plugin with no option (i.e. the defaults).			
-				
+				}catch(e){
+
+				}
 			</script> 
 			</div>
 		</div>
