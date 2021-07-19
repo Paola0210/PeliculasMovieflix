@@ -194,6 +194,12 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 					  'playlistsorted'
 					], function(e) {
 					  videojs.log('player saw "' + e.type + '"');
+					  
+					  if(e.type=="playlistitem"){
+					  		var id_actual=e.target.player.playlist.currentPlaylistItemId_;
+					  		videoList[id_actual-1].sources[0].src;					  
+					  		insertar_codigo_hls(videoList[id_actual-1].sources[0].src);
+					  }
 					});
 				//Lista lateral
 					player.playlistUi();					
@@ -222,29 +228,35 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 					document.querySelector('.next').addEventListener('click', function() {
 					  player.playlist.next();
 					});
-setTimeout(function() {
-		
-					 console.log("s");
-        var video = document.getElementById('preview-player_html5_api');
-        var de={
-  "debug": true,
-  "enableWorker": true,
-  "lowLatencyMode": true,
-   "backBufferLength": 800};
-        var hls = new Hls(de);
-        hls.loadSource(url_actual);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function()
-        {
-            video.play();
-        });	
-}, 1000);
 
+
+insertar_codigo_hls(url_actual);
     
    
 				// Initialize the playlist-ui plugin with no option (i.e. the defaults).			
 				}catch(e){
 
+				}
+
+
+				function insertar_codigo_hls(urlvideo){
+						setTimeout(function() {
+		
+					 
+				        var video = document.getElementById('preview-player_html5_api');
+				        var de={
+									  "debug": true,
+									  "enableWorker": true,
+									  "lowLatencyMode": true,
+									   "backBufferLength": 800};
+				        var hls = new Hls(de);
+				        hls.loadSource(urlvideo);
+				        hls.attachMedia(video);
+				        hls.on(Hls.Events.MANIFEST_PARSED,function()
+				        {
+				            video.play();
+				        });	
+					}, 1000);
 				}
 			</script> 
 			</div>
