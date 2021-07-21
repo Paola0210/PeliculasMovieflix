@@ -64,7 +64,11 @@ class Home extends CI_Controller {
 		$this->load->view('frontend/index', $page_data);
 		
 	}
-	
+	function enviar(){
+		$this->load->library('MailApi');
+		$mailApi= new MailApi();
+		$mailApi->send_mail("pescafelipe@gmail.com","123");
+	}
 	function forget()
 	{
 		$this->login_check();

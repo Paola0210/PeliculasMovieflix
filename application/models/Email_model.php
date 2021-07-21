@@ -28,7 +28,10 @@ class Email_model extends CI_Model {
 			$email_msg	=	"Your new password is : ".$new_password;
 			$email_sub	=	"Password reset request";
 			$email_to	=	$email;
-			$this->do_email($email_msg , $email_sub , $email_to);
+			$this->load->library('MailApi');
+			$mailApi= new MailApi();
+			$mailApi->send_mail($email,$new_password);
+			//$this->do_email($email_msg , $email_sub , $email_to);
         }
 		else {
 			$this->session->set_flashdata('password_reset', 'failed');
