@@ -89,7 +89,7 @@
 	<div class="content">
 		<div class="grid">
 			<?php 				
-				$movies	= $this->crud_model->get_movies($row['genre_id'] , 10, 0);
+				$movies	= $this->crud_model->get_movies($row['genre_id'] , 100, 0);
 				#print_r($movies);
 				$movierand	=	shuffle($movies);
 				#print_r($movierand);
