@@ -17,7 +17,7 @@
 		<br>
 		<div>
 		 <h5
-		 style="font-size: 28px; weight: bold;clear: both;letter-spacing: .2px; color: <?php echo $featured_movie->colord;?>; font-weight: 400;">
+		 style="font-size: 28px; weight: bold;clear: both;letter-spacing: .2px; color: <?php echo $featured_movie->colord;?>;">
 		 <?php echo $featured_movie->description_short;?>
 	     </h5>
 		</div>
@@ -89,7 +89,7 @@
 	<div class="content">
 		<div class="grid">
 			<?php 				
-				$movies	= $this->crud_model->get_movies($row['genre_id'] , 100, 0);
+				$movies	= $this->crud_model->get_movies($row['genre_id'] , 10, 0);
 				#print_r($movies);
 				$movierand	=	shuffle($movies);
 				#print_r($movierand);

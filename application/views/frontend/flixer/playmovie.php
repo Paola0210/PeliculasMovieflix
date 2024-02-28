@@ -6,7 +6,6 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 	?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/hovercss/demo.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/hovercss/set1.css" />
-
 <style>
 	.movie_thumb{}
 	.btn_opaque{font-size:20px; border: 1px solid #939393;text-decoration: none;margin: 10px;background-color: rgba(0, 0, 0, 0.74); color: #fff;}
@@ -73,7 +72,7 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 	<div class="container" style="padding-top:100px; text-align: center;">
 		<div class="row">
 			<div class="col-lg-12">
-<?php /*?>				<script src="https://content.jwplatform.com/libraries/O7BMTay5.js"></script>
+<?php ?>				<script src="https://content.jwplatform.com/libraries/O7BMTay5.js"></script>
 				<div id="video_player_div"><?php echo $row['title'];?></div>
 				<script> 
 				jwplayer("video_player_div").setup({
@@ -95,8 +94,8 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 					
 					
 					
-				</script><?php */?>
-            	<link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/video.js/dist/video-js.css" />
+				</script><?php ?>
+            	<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/video.js/dist/video-js.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-playlist-ui/examples.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/videojs-resolution-switcher/lib/videojs-resolution-switcher.css" />
@@ -105,15 +104,14 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
                 <section class="main-preview-player">
                   <video id="preview-player" class="video-js vjs-fluid vjs-big-play-centered " preload="auto" crossorigin="anonymous" data-setup='{}'>
                     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 hola</a></p>
-                  </video> 
-                  
+                  </video>             
                 
                   <div class="playlist-container  preview-player-dimensions vjs-fluid" data-for="preview-player">
                     <ol class="vjs-playlist"></ol>
                   </div>
                 </section>
                 <button class="previous vjs-icon-previous-item"></button>
-  				<button class="next vjs-icon-next-item"></button>
+  				<button class="next vjs-icon-next-item"></button>-->
 			</div>
             
             <script type="text/javascript" src="<?php echo base_url() . 'assets/frontend/' . $selected_theme;?>/node_modules/video.js/dist/video.js"></script>
@@ -125,11 +123,8 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
                        
            <script>
 			  
-		   </script>  
-		   <script  src="<?=base_url() ?>assets/backend/hls2/dist/hls.js"></script>         
+		   </script>           
             <script>
-            	var url_actual="";
-            	try{
 			 // botonnes de control reproductor
 			   var myCustomSrcPicker = function(player,src,label){
 						  // select any source you want
@@ -194,12 +189,6 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 					  'playlistsorted'
 					], function(e) {
 					  videojs.log('player saw "' + e.type + '"');
-					  
-					  if(e.type=="playlistitem"){
-					  		var id_actual=e.target.player.playlist.currentPlaylistItemId_;
-					  		videoList[id_actual-1].sources[0].src;					  
-					  		insertar_codigo_hls(videoList[id_actual-1].sources[0].src);
-					  }
 					});
 				//Lista lateral
 					player.playlistUi();					
@@ -209,11 +198,9 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 				//declaramos variable indexActual;
 				//se recorre array videoList y se compara el idPelicula con el id de la pelicula que viene por get y se guarda en indexActual;
 				var indexActual=0;
-
 				$(videoList).each(function(index){
 					if($(videoList[index]).attr("idPelicula")==<?php echo $movie_id ?>){
-						indexActual=index;	
-						url_actual=$(videoList[index]).attr("sources")[0].src;
+						indexActual=index;	   
 					   }
 					
 				});
@@ -228,36 +215,8 @@ $movie_details2	=	$this->db->get_where('movie' , array('movie_id' => $movie_id))
 					document.querySelector('.next').addEventListener('click', function() {
 					  player.playlist.next();
 					});
-
-
-insertar_codigo_hls(url_actual);
-    
-   
 				// Initialize the playlist-ui plugin with no option (i.e. the defaults).			
-				}catch(e){
-
-				}
-
-
-				function insertar_codigo_hls(urlvideo){
-						setTimeout(function() {
-		
-					 
-				        var video = document.getElementById('preview-player_html5_api');
-				        var de={
-									  "debug": true,
-									  "enableWorker": true,
-									  "lowLatencyMode": true,
-									   "backBufferLength": 800};
-				        var hls = new Hls(de);
-				        hls.loadSource(urlvideo);
-				        hls.attachMedia(video);
-				        hls.on(Hls.Events.MANIFEST_PARSED,function()
-				        {
-				            video.play();
-				        });	
-					}, 1000);
-				}
+				
 			</script> 
 			</div>
 		</div>
